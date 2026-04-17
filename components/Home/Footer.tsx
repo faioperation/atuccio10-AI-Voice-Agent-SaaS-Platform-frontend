@@ -6,7 +6,7 @@ const footerCols = {
   PRODUCT: ["Features", "How it Works", "Pricing", "Integrations"],
   COMPANY: ["About", "Blog", "Careers", "Contact"],
   LEGAL: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"],
-  SUPPORT: ["Help Center", "API Docs", "Status", "Book a Demo"],
+  SUPPORT: ["Help Center", "API Docs", "Status"],
 };
 
 export default function Footer() {

@@ -40,17 +40,15 @@ export default function Hero() {
               lineHeight:1.08, letterSpacing:"-0.035em",
               color:"#0C1824", marginBottom:"20px",
             }}>
-              Your leads show up{" "}
-              <span className="grad-text">pre-qualified.</span>
-              <br />Your agents show up to close.
+              Built for closers.{" "}
+              <span className="grad-text">Powered by AI.</span>
             </h1>
 
             <p style={{
               fontSize:"16px", lineHeight:1.72, color:"#4a6070",
               maxWidth:"440px", marginBottom:"36px",
             }}>
-              Precision-milled AI Voice Agents for high-volume insurance teams.
-              Instant qualification, real-time coaching, seamless CRM sync.
+              A calendar full of buyers. Not tire kickers. AI that qualifies before it books and helps you Clinch every deal.
             </p>
 
             <div style={{ display:"flex", gap:"12px", flexWrap:"wrap" }}>

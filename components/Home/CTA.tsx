@@ -3,7 +3,7 @@
 export default function CTA() {
   return (
     <section id="cta" style={{
-      padding: "100px 0",
+      padding: "40px 0 100px",
       background: "#0C1824",
       textAlign: "center",
       position: "relative",
@@ -33,7 +33,7 @@ export default function CTA() {
           borderRadius: "100px", padding: "6px 16px", marginBottom: "24px",
         }}>
           <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22C47A", boxShadow: "0 0 0 3px rgba(34,196,122,0.3)" }} />
-          <span style={{ fontSize: "12px", fontWeight: 700, color: "#6B9FD4", letterSpacing: "0.06em" }}>14-DAY FREE TRIAL · NO CREDIT CARD</span>
+          <span style={{ fontSize: "12px", fontWeight: 700, color: "#6B9FD4", letterSpacing: "0.06em" }}>7-DAY FREE TRIAL · CREDIT CARD REQUIRED</span>
         </div>
 
         <h2 style={{
@@ -56,19 +56,6 @@ export default function CTA() {
         <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap" }}>
           <a href="#pricing" className="btn-primary" style={{ fontSize: "15px", padding: "14px 32px" }}>
             Start Your Free Trial →
-          </a>
-          <a href="#how-it-works" className="btn-outline" style={{
-            fontSize: "15px",
-            padding: "14px 32px",
-            background: "#FFFFFF",
-            color: "#0C1824",
-            border: "2px solid #FFFFFF",
-            borderRadius: "8px",
-            fontWeight: 700,
-            textDecoration: "none",
-            display: "inline-block",
-          }}>
-            Schedule a Demo
           </a>
         </div>
       </div>

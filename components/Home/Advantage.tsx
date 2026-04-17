@@ -18,13 +18,14 @@ export default function Advantage() {
             <p style={{ fontSize:"15px", color:"#4a6070", lineHeight:1.72, marginBottom:"32px" }}>
               While your rep talks, Clinch&apos;s AI listens, analyzes, and surfaces the perfect
               response — battle cards, objection handlers, compliance cues — invisible to the lead.
+              Our AI is trained by thousands of hours of training material from some of the industry top closers, saving human agents hundreds of hours of needed coaching.
             </p>
 
             <div style={{ display:"flex", flexDirection:"column", gap:"14px", marginBottom:"32px" }}>
               {[
                 { label:"Live Objection Handling", desc:"Battle cards trigger on spoken keywords, delivered in &lt;500ms." },
                 { label:"Compliance Monitoring", desc:"Flags required disclosure languages before your rep moves on." },
-                { label:"Trigger-Based Next Steps", desc:"AI surfaces the best next action based on real-time call context." },
+                { label:"Pre-Built Scripting", desc:"Includes optimized scripts for Term Life, Whole Life, Universal Life (UL), Final Expense, and Mortgage Protection." },
               ].map(item => (
                 <div key={item.label} style={{ display:"flex", gap:"14px", alignItems:"flex-start" }}>
                   <div style={{

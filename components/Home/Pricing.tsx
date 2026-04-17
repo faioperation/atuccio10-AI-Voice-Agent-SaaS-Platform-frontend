@@ -2,33 +2,33 @@
 
 const plans = [
   {
-    name: "STARTER",
-    price: "$0",
-    per: "",
-    desc: "Get started at no cost. Perfect for solo agents exploring AI-powered sales.",
+    name: "QUALIFY",
+    price: "$74.99",
+    per: "/month",
+    desc: "Just the AI lead voice agent and features.",
     featured: false,
-    cta: "Start Free",
+    cta: "Start Free Trial",
     items: ["Up to 100 AI qualification calls/mo", "Live call transcription", "Basic CRM integration", "Email support"],
     struck: [],
   },
   {
-    name: "PROFESSIONAL",
-    price: "$50",
+    name: "CLOSE",
+    price: "$74.99",
     per: "/month",
-    desc: "Everything high-volume teams need to pre-qualify, coach, and close confidently.",
+    desc: "Just the AI assistant live prompter and features.",
     featured: true,
     cta: "Start Free Trial",
     items: ["Unlimited AI qualification calls", "Real-time coaching + battle cards", "Full CRM integration suite", "AI-powered scheduling", "Advanced analytics", "Priority support"],
     struck: [],
   },
   {
-    name: "ENTERPRISE",
-    price: "$100",
+    name: "THE CLINCHER",
+    price: "$129.99",
     per: "/month",
-    desc: "Custom compliance, deep integrations, dedicated success manager and white-glove service.",
+    desc: "Both features. Maximum power to qualify and close every deal.",
     featured: false,
-    cta: "Talk to Sales",
-    items: ["Everything in Professional", "Custom compliance modules", "Dedicated success manager", "SLA-backed 99.9% uptime", "Custom voice persona", "24/7 phone support"],
+    cta: "Start Free Trial",
+    items: ["Everything in Close", "Custom compliance modules", "Dedicated success manager", "SLA-backed 99.9% uptime", "Custom voice persona", "24/7 phone support"],
     struck: [],
   },
 ];
@@ -47,7 +47,7 @@ export default function Pricing() {
             Predictable. <span className="grad-text">Performance.</span>
           </h2>
           <p style={{ marginTop: "12px", fontSize: "15px", color: "#4a6070" }}>
-            14-day free trial on all plans · No credit card required
+            7 day free trial, credit card required
           </p>
         </div>
 
@@ -132,7 +132,8 @@ export default function Pricing() {
         </div>
 
         <p style={{ textAlign: "center", fontSize: "12px", color: "#6B9FD4", marginTop: "28px" }}>
-          All plans include SOC 2 Type II · HIPAA-ready infrastructure · Cancel anytime
+          Base plan includes standard usage. Additional usage may be billed.
+          <br />All plans include SOC 2 Type II · HIPAA-ready infrastructure · Cancel anytime
         </p>
       </div>
 

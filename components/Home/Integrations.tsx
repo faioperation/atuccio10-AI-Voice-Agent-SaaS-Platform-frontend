@@ -1,17 +1,11 @@
 "use client";
 
 const integrations = [
+  { name: "Go High Level", category: "CRM" },
   { name: "Salesforce", category: "CRM" },
   { name: "HubSpot", category: "CRM" },
-  { name: "Velocify", category: "Insurance CRM" },
-  { name: "Applied Epic", category: "Agency Mgmt" },
-  { name: "Duck Creek", category: "Policy Mgmt" },
-  { name: "Guidewire", category: "Core Systems" },
-  { name: "EZLynx", category: "Agency Mgmt" },
-  { name: "AMS360", category: "Agency Mgmt" },
   { name: "Zoom", category: "Video / Calls" },
   { name: "RingCentral", category: "Communications" },
-  { name: "Five9", category: "Contact Center" },
   { name: "Twilio", category: "Communications" },
 ];
 
@@ -20,7 +14,7 @@ export default function Integrations() {
     <section
       id="integrations"
       style={{
-        padding: "100px 0",
+        padding: "100px 0 40px",
         background: "#0C1824",
         position: "relative",
         overflow: "hidden",

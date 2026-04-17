@@ -43,13 +43,6 @@ export default function Navbar() {
 
         {/* CTAs */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <a href="#pricing" style={{
-            fontSize: "13px", fontWeight: 600, color: "#4a6070",
-            textDecoration: "none", padding: "6px 12px", transition: "color 0.15s",
-          }}
-          onMouseEnter={e => ((e.target as HTMLElement).style.color = "#1A6BDC")}
-          onMouseLeave={e => ((e.target as HTMLElement).style.color = "#4a6070")}
-          >Book Demo</a>
           <a href="#pricing" className="btn-primary" style={{ fontSize: "13px", padding: "9px 20px" }}>
             Start Free Trial
           </a>
@@ -74,7 +67,6 @@ export default function Navbar() {
             }}>{l}</a>
           ))}
           <div style={{ marginTop:"14px", display:"flex", flexDirection:"column", gap:"8px" }}>
-            <a href="#pricing" className="btn-ghost" style={{ textAlign:"center" }}>Book Demo</a>
             <a href="#pricing" className="btn-primary" style={{ textAlign:"center" }}>Start Free Trial</a>
           </div>
         </div>
