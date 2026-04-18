@@ -40,15 +40,15 @@ export default function Hero() {
               lineHeight:1.08, letterSpacing:"-0.035em",
               color:"#0C1824", marginBottom:"20px",
             }}>
-              Built for closers.{" "}
-              <span className="grad-text">Powered by AI.</span>
+              Stop paying $50+{" "}
+              <span className="grad-text">per live transfer lead.</span>
             </h1>
 
             <p style={{
               fontSize:"16px", lineHeight:1.72, color:"#4a6070",
               maxWidth:"440px", marginBottom:"36px",
             }}>
-              A calendar full of buyers. Not tire kickers. AI that qualifies before it books and helps you Clinch every deal.
+              Control your own live transfer and warm lead pipeline. Clinch takes any lead and only connects you if they're ready to close.
             </p>
 
             <div style={{ display:"flex", gap:"12px", flexWrap:"wrap" }}>
