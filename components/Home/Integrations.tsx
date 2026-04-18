@@ -123,7 +123,7 @@ export default function Integrations() {
           <p style={{ fontSize: "14px", color: "#6B9FD4" }}>
             Don&apos;t see your platform?{" "}
           </p>
-          <a href="#footer-contact" className="btn-outline-light" style={{ fontSize: "14px", padding: "12px 28px" }}>
+          <a href="#footer-contact" className="btn-secondary" style={{ fontSize: "14px", padding: "12px 28px" }}>
             Request a Custom Integration →
           </a>
         </div>
@@ -136,7 +136,7 @@ export default function Integrations() {
           }
         }
         @media (max-width: 640px) {
-          #integrations { padding: 64px 0 16px !important; }
+          #integrations { padding: 64px 0 !important; }
           #integrations-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 12px !important;
