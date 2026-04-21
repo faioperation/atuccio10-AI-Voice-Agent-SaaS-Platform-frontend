@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "date": "2026-06-01",
+    "name": "Cameron Williamson",
+    "role": "Developer",
+    "avatar": "/person.jpg",
+    "time": "10:30 AM-11:30 AM (1 hour)",
+    "link": "meet.google.com/cnz-jdhg"
+  },
+  {
+    "id": "2",
+    "date": "2026-06-01",
+    "name": "Jane Cooper",
+    "role": "Designer",
+    "avatar": "/person.jpg",
+    "time": "01:00 PM-02:00 PM (1 hour)",
+    "link": "meet.google.com/abc-xyz"
+  },
+  {
+    "id": "3",
+    "date": "2026-06-03",
+    "name": "Eleanor Pena",
+    "role": "Product Manager",
+    "avatar": "/person.jpg",
+    "time": "09:00 AM-10:00 AM (1 hour)",
+    "link": "meet.google.com/def-uvw"
+  },
+  {
+    "id": "4",
+    "date": "2026-06-03",
+    "name": "Jacob Jones",
+    "role": "Marketing",
+    "avatar": "/person.jpg",
+    "time": "11:30 AM-12:30 PM (1 hour)",
+    "link": "meet.google.com/ghi-rst"
+  },
+  {
+    "id": "5",
+    "date": "2026-06-07",
+    "name": "Dianne Russell",
+    "role": "Sales Lead",
+    "avatar": "/person.jpg",
+    "time": "03:00 PM-04:00 PM (1 hour)",
+    "link": "meet.google.com/jkl-mno"
+  },
+  {
+    "id": "6",
+    "date": "2026-06-07",
+    "name": "Theresa Webb",
+    "role": "Support Engineer",
+    "avatar": "/person.jpg",
+    "time": "04:30 PM-05:00 PM (30 min)",
+    "link": "meet.google.com/pqr-stu"
+  },
+  {
+    "id": "7",
+    "date": "2026-06-11",
+    "name": "Courtney Henry",
+    "role": "QA Analyst",
+    "avatar": "/person.jpg",
+    "time": "10:00 AM-11:00 AM (1 hour)",
+    "link": "meet.google.com/vwx-yza"
+  },
+  {
+    "id": "8",
+    "date": "2026-06-11",
+    "name": "Kathryn Murphy",
+    "role": "Backend Dev",
+    "avatar": "/person.jpg",
+    "time": "02:00 PM-03:00 PM (1 hour)",
+    "link": "meet.google.com/bcd-efg"
+  },
+  {
+    "id": "9",
+    "date": "2026-06-19",
+    "name": "Arlene McCoy",
+    "role": "HR Manager",
+    "avatar": "/person.jpg",
+    "time": "09:30 AM-10:00 AM (30 min)",
+    "link": "meet.google.com/hij-klm"
+  },
+  {
+    "id": "10",
+    "date": "2026-06-19",
+    "name": "Darrell Steward",
+    "role": "Accountant",
+    "avatar": "/person.jpg",
+    "time": "01:00 PM-02:00 PM (1 hour)",
+    "link": "meet.google.com/nop-qrs"
+  },
+  {
+    "id": "11",
+    "date": "2026-06-27",
+    "name": "Wade Warren",
+    "role": "CEO",
+    "avatar": "/person.jpg",
+    "time": "11:00 AM-12:00 PM (1 hour)",
+    "link": "meet.google.com/tuv-wxy"
+  },
+  {
+    "id": "12",
+    "date": "2026-06-27",
+    "name": "Esther Howard",
+    "role": "CTO",
+    "avatar": "/person.jpg",
+    "time": "04:00 PM-05:00 PM (1 hour)",
+    "link": "meet.google.com/zab-cde"
+  }
+]

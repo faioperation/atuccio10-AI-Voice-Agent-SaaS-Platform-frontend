@@ -1,0 +1,33 @@
+{
+  "phoneNumber": "+1 (555) 123-4567",
+  "duration": "4:32",
+  "dateTime": "2025-12-16 10:45 AM",
+  "issueType": "Screen",
+  "messages": [
+    {
+      "role": "AI Assistant:",
+      "text": "Thank you for calling UBreakiFix! How can I help you today?",
+      "color": "text-[#16A34A]"
+    },
+    {
+      "role": "Customer:",
+      "text": "Hi, my iPhone 13 screen is cracked. How much would it cost to repair?",
+      "color": "text-[#3B82F6]"
+    },
+    {
+      "role": "AI Assistant:",
+      "text": "I can help you with that! For an iPhone 13 screen repair, our price is $199. This includes parts, labor, and comes with a 90-day warranty. Would you like to book an appointment?",
+      "color": "text-[#16A34A]"
+    },
+    {
+      "role": "Customer:",
+      "text": "Yes, please! When are you available?",
+      "color": "text-[#3B82F6]"
+    },
+    {
+      "role": "AI Assistant:",
+      "text": "Great! I have availability today at 2:00 PM or tomorrow at 10:00 AM. Which works better for you?",
+      "color": "text-[#16A34A]"
+    }
+  ]
+}

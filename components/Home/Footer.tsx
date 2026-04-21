@@ -27,18 +27,15 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             {/* Inline logo — avoids white bg on dark footer */}
-            <div style={{ display: "flex", alignItems: "center", gap: "9px", marginBottom: "14px" }}>
+            <div style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
               <div style={{
-                width: "28px", height: "28px", borderRadius: "50%",
-                background: "#1A6BDC",
+                width: "80px", height: "80px",
+                overflow: "hidden",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexShrink: 0,
               }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 13l4 4L19 7" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <Image src="/logo.png" alt="Clinch" width={80} height={80} className="object-contain" />
               </div>
-              <span style={{ fontWeight: 800, fontSize: "18px", letterSpacing: "-0.02em", color: "#E8F2FC" }}>Clinch</span>
             </div>
             <p style={{
               fontSize: "13px",
@@ -58,13 +55,13 @@ export default function Footer() {
                   display: "flex", alignItems: "center", justifyContent: "center",
                   transition: "border-color 0.18s",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#1A6BDC")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#1e3048")}
-                aria-label={s}>
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#1A6BDC")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#1e3048")}
+                  aria-label={s}>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="#6B9FD4">
-                    {s === "tw" && <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>}
-                    {s === "li" && <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></>}
-                    {s === "fb" && <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>}
+                    {s === "tw" && <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />}
+                    {s === "li" && <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" /><circle cx="4" cy="4" r="2" /></>}
+                    {s === "fb" && <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />}
                   </svg>
                 </a>
               ))}
@@ -89,8 +86,8 @@ export default function Footer() {
                   <a key={link} href="#" style={{
                     fontSize: "13px", color: "#6B9FD4", textDecoration: "none", transition: "color 0.18s",
                   }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#E8F2FC")}
-                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#6B9FD4")}
+                    onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#E8F2FC")}
+                    onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#6B9FD4")}
                   >
                     {link}
                   </a>
