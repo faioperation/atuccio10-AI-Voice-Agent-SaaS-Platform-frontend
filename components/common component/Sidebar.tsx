@@ -13,6 +13,8 @@ import {
   LogOut,
   X,
   Check,
+  Mic,
+  LogIn,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,6 +26,7 @@ const menuItems = [
   { name: "Leads", href: "/business_admin/leads", icon: Users },
   { name: "Appointment", href: "/business_admin/appointment", icon: CalendarDays },
   { name: "Configuration", href: "/business_admin/configuration", icon: Settings },
+  { name: "Voice Configuration", href: "/business_admin/voice-configuration", icon: Mic },
   { name: "Manage Plan", href: "/business_admin/manage-plan", icon: CreditCard },
   { name: "Support Ticket", href: "/business_admin/support-ticket", icon: LifeBuoy },
   { name: "Profile", href: "/business_admin/profile", icon: UserCircle },
@@ -45,25 +48,27 @@ export default function Sidebar({ closeSidebar }: SidebarProps) {
     <aside className="flex flex-col w-full h-full bg-white overflow-y-auto">
 
       {/* Mobile close button */}
+      {/* Mobile close button – positioned to align with logo header */}
       {closeSidebar && (
         <button
           onClick={closeSidebar}
-          className="absolute top-4 right-4 p-1.5 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+          className="absolute top-6 right-4 p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded-full transition-all z-20 lg:hidden"
           aria-label="Close sidebar"
         >
-          <X size={18} />
+          <X size={20} />
         </button>
       )}
 
       <div className="h-[72px] md:h-[90px] flex items-center justify-center px-6 border-b border-[#EDEFF2]">
         <Link href="/" className="block transform transition-transform hover:scale-105">
-          <Image 
-            src="/logo.png" 
-            alt="Clinch" 
+          <Image
+            src="/logo.png"
+            alt="Clinch"
             width={90}
             height={36}
             className="object-contain"
-            priority 
+            style={{ height: 'auto' }}
+            priority
           />
         </Link>
       </div>
@@ -112,11 +117,11 @@ export default function Sidebar({ closeSidebar }: SidebarProps) {
         <Link
           href="/auth/login"
           className="flex items-center gap-3 mx-3 px-3 h-[46px] rounded-xl
-          text-[13.5px] font-medium text-[#EF4444]
+          text-[13.5px] font-medium text-black
           hover:bg-red-50 transition-colors"
         >
-          <LogOut size={18} strokeWidth={1.8} />
-          <span>Logout</span>
+          <LogIn size={18} strokeWidth={1.8} />
+          <span>Login</span>
         </Link>
       </div>
     </aside>

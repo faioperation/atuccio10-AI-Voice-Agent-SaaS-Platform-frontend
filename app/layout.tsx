@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { QueryProvider } from "@/components/Providers";
+import { QueryProvider } from "@/components/common component/Providers";
 
 export default function RootLayout({
   children,
@@ -28,7 +28,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <QueryProvider>
           {children}
         </QueryProvider>

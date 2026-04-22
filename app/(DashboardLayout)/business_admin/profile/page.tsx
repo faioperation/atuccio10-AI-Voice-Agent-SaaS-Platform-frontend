@@ -1,9 +1,33 @@
+"use client";
+
+import React, { useState } from "react";
+import ProfileInfo from "@/components/Profile/ProfileInfo";
+import EditProfileModal from "@/components/Profile/EditProfileModal";
+import ChangePasswordModal from "@/components/Profile/ChangePasswordModal";
+
 export default function ProfilePage() {
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+
   return (
-    <div className="flex flex-col gap-4">
-      <div className="p-6 bg-white rounded-xl border border-gray-100 shadow-sm min-h-[400px] flex items-center justify-center">
-        <p className="text-gray-400 font-medium italic">Profile Content (Figma Design Implementation Pending)</p>
+    <div className="space-y-6">
+      {/* Profile Info Card Container */}
+      <div className="pt-2">
+        <ProfileInfo 
+          onEdit={() => setIsEditModalOpen(true)}
+          onChangePassword={() => setIsPasswordModalOpen(true)}
+        />
       </div>
+
+      {/* Modals */}
+      <EditProfileModal 
+        isOpen={isEditModalOpen} 
+        onClose={() => setIsEditModalOpen(false)} 
+      />
+      <ChangePasswordModal 
+        isOpen={isPasswordModalOpen} 
+        onClose={() => setIsPasswordModalOpen(false)} 
+      />
     </div>
   );
 }

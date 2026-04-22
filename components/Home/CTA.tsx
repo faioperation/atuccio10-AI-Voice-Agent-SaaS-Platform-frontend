@@ -20,13 +20,13 @@ export default function CTA() {
 
       <div className="container-xl" style={{ position: "relative" }}>
         {/* Badge */}
-        <div style={{
+        <div className="cta-badge-container" style={{
           display: "inline-flex", alignItems: "center", gap: "7px",
           background: "rgba(26,107,220,0.08)", border: "1px solid rgba(26,107,220,0.2)",
           borderRadius: "100px", padding: "6px 16px", marginBottom: "24px",
         }}>
           <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22C47A", boxShadow: "0 0 0 3px rgba(34,196,122,0.3)" }} />
-          <span style={{ fontSize: "12px", fontWeight: 700, color: "#1A6BDC", letterSpacing: "0.06em" }}>7-DAY FREE TRIAL · CREDIT CARD REQUIRED</span>
+          <span className="cta-badge-text" style={{ fontSize: "12px", fontWeight: 700, color: "#1A6BDC", letterSpacing: "0.06em" }}>7-DAY FREE TRIAL · CREDIT CARD REQUIRED</span>
         </div>
 
         {/* Heading */}
@@ -61,6 +61,8 @@ export default function CTA() {
           #cta h2 { font-size: clamp(28px, 8vw, 42px) !important; }
           #cta p { margin-bottom: 32px !important; }
           #cta .btn-primary { width: 100%; padding: 12px 24px !important; }
+          .cta-badge-container { padding: 4px 12px !important; margin-bottom: 20px !important; }
+          .cta-badge-text { font-size: 10px !important; letter-spacing: 0.03em !important; }
         }
       `}</style>
     </section>
