@@ -1,9 +1,23 @@
+"use client";
+
+import React, { useState } from "react";
+import CurrentPlan from "@/components/ManagePlan/CurrentPlan";
+import SubscriptionHistory from "@/components/ManagePlan/SubscriptionHistory";
+import PricingSelection from "@/components/ManagePlan/PricingSelection";
+
 export default function ManagePlanPage() {
+  const [view, setView] = useState<"manage" | "upgrade">("manage");
+
   return (
-    <div className="flex flex-col gap-4">
-      <div className="p-6 bg-white rounded-xl border border-gray-100 shadow-sm min-h-[400px] flex items-center justify-center">
-        <p className="text-gray-400 font-medium italic">Manage Plan Content (Figma Design Implementation Pending)</p>
-      </div>
+    <div className="space-y-6">
+      {view === "manage" ? (
+        <>
+          <CurrentPlan onUpgrade={() => setView("upgrade")} />
+          <SubscriptionHistory />
+        </>
+      ) : (
+        <PricingSelection onBack={() => setView("manage")} />
+      )}
     </div>
   );
 }

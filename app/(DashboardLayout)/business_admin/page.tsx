@@ -99,7 +99,7 @@ export default function DashboardPage() {
               </div>
             </div>
           </div>
-          <div className="h-[230px]">
+          <div className="h-[230px] min-w-0">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={leadsData} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
                 <defs>
@@ -180,7 +180,7 @@ export default function DashboardPage() {
               </svg>
             </div>
           </div>
-          <div className="h-[230px]" style={{ outline: 'none' }}>
+          <div className="h-[230px] min-w-0">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={callLogsData} margin={{ top: 5, right: 5, left: -25, bottom: 0 }} style={{ outline: 'none' }}>
                 <XAxis
