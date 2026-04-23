@@ -110,7 +110,7 @@ export default function SystemSidebar({ closeSidebar }: SidebarProps) {
           hover:bg-red-50 transition-colors"
         >
           <LogIn size={18} strokeWidth={1.8} />
-          <span>Logout</span>
+          <span>Login</span>
         </Link>
       </div>
     </aside>
