@@ -16,7 +16,7 @@ const initialTiers: Tier[] = [
     price: "74.99",
     features: [
       "Up to 100 AI qualification calls/mo",
-      "Live call transcription",
+      "Every Call Transcribed Automatically",
       "Basic CRM integration",
       "Email support",
     ],

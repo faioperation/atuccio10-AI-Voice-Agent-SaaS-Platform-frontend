@@ -114,7 +114,7 @@ export default function LoginPage() {
             Don't have an account?{" "}
             <button
               onClick={() => router.push("/auth/signup")}
-              className="font-semibold text-[#1A6BDC] hover:text-[#1558be] transition-colors"
+              className="font-semibold text-[#1A6BDC] hover:text-[#1558be] transition-colors hover:cursor-pointer"
             >
               Sign up
             </button>

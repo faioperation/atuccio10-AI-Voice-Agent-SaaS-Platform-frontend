@@ -8,7 +8,7 @@ const plans = [
     desc: "Just the AI lead voice agent and features.",
     featured: false,
     cta: "Start Free Trial",
-    items: ["Up to 100 AI qualification calls/mo", "Live call transcription", "Basic CRM integration", "Email support"],
+    items: ["Up to 100 AI qualification calls/mo", "Every Call Transcribed Automatically", "Basic CRM integration", "Email support"],
     struck: [],
   },
   {

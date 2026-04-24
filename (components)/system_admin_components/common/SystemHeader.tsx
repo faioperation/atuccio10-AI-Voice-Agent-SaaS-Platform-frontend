@@ -43,7 +43,7 @@ export default function SystemHeader({ setSidebarOpen }: HeaderProps) {
       <div className="flex items-center gap-3 md:gap-4">
         <button
           onClick={() => setSidebarOpen(true)}
-          className="lg:hidden p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-colors"
+          className="lg:hidden p-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-colors hover:cursor-pointer"
           aria-label="Open sidebar"
         >
           <Menu size={20} />
@@ -56,7 +56,7 @@ export default function SystemHeader({ setSidebarOpen }: HeaderProps) {
         {/* Temporary Switch Link */}
         <Link 
           href="/business_admin" 
-          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl border border-[#EDEFF2] text-[12px] font-bold text-[#1A6BDC] hover:bg-[#F3F7FF] transition-all shadow-sm"
+          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl border border-[#EDEFF2] text-[12px] font-bold text-[#1A6BDC] hover:bg-[#F3F7FF] transition-all shadow-sm hover:cursor-pointer"
         >
           Switch to Business
         </Link>
@@ -65,7 +65,7 @@ export default function SystemHeader({ setSidebarOpen }: HeaderProps) {
         <div className="relative" ref={notifRef}>
           <button
             onClick={() => setShowNotif(!showNotif)}
-            className={`relative p-2 rounded-full transition-colors ${showNotif ? 'bg-[#F0F5FF] text-[#1A6BDC]' : 'text-[#64748B] hover:bg-[#F5F7FA]'}`}
+            className={`relative p-2 rounded-full transition-colors hover:cursor-pointer ${showNotif ? 'bg-[#F0F5FF] text-[#1A6BDC]' : 'text-[#64748B] hover:bg-[#F5F7FA]'}`}
           >
             <Bell size={19} />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white" />
@@ -78,7 +78,7 @@ export default function SystemHeader({ setSidebarOpen }: HeaderProps) {
         </div>
 
         {/* User Profile avatar */}
-        <Link href="/system_admin/profile" className="flex-shrink-0 ml-1">
+        <Link href="/system_admin/profile" className="flex-shrink-0 ml-1 hover:cursor-pointer">
           <div className="w-[38px] h-[38px] rounded-full overflow-hidden border border-[#EDEFF2] bg-gray-100 ring-2 ring-transparent hover:ring-[#EAF2FF] transition-all">
             <Image
               src="/system_admin_avatar.png"

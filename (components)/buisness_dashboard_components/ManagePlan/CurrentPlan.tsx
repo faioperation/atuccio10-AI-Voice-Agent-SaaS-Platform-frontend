@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 
 const features = [
   "Up to 100 AI qualification calls/mo",
-  "Live call transcription",
+  "Every Call Transcribed Automatically",
   "Basic CRM integration",
   "Email support",
 ];
