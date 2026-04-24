@@ -27,7 +27,7 @@ const ChangePasswordModal = ({ isOpen, onClose }: ChangePasswordModalProps) => {
       <div className="relative bg-white rounded-2xl w-full max-w-[850px] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
         <div className="flex items-center justify-between px-8 py-6 border-b border-[#F1F5F9]">
           <h3 className="text-[18px] font-bold text-[#0C1824]">Change Password</h3>
-          <button onClick={onClose} className="text-[#94A3B8] hover:text-[#64748B] transition-colors">
+          <button onClick={onClose} className="text-[#94A3B8] hover:text-[#64748B] transition-colors hover:cursor-pointer">
             <X size={20} />
           </button>
         </div>
@@ -45,7 +45,7 @@ const ChangePasswordModal = ({ isOpen, onClose }: ChangePasswordModalProps) => {
                 />
                 <button 
                   onClick={() => setShowCurrent(!showCurrent)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B] transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B] transition-colors hover:cursor-pointer"
                 >
                   {showCurrent ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -62,7 +62,7 @@ const ChangePasswordModal = ({ isOpen, onClose }: ChangePasswordModalProps) => {
                 />
                 <button 
                   onClick={() => setShowNew(!showNew)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B] transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B] transition-colors hover:cursor-pointer"
                 >
                   {showNew ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -79,7 +79,7 @@ const ChangePasswordModal = ({ isOpen, onClose }: ChangePasswordModalProps) => {
                 />
                 <button 
                   onClick={() => setShowConfirm(!showConfirm)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B] transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#64748B] transition-colors hover:cursor-pointer"
                 >
                   {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -91,11 +91,11 @@ const ChangePasswordModal = ({ isOpen, onClose }: ChangePasswordModalProps) => {
           <div className="flex items-center justify-end gap-3 pt-4">
             <button 
               onClick={onClose}
-              className="px-8 py-2.5 rounded-lg border border-[#FF5A5A] text-[#FF5A5A] text-[14px] font-bold hover:bg-red-50 transition-all"
+              className="px-8 py-2.5 rounded-lg border border-[#FF5A5A] text-[#FF5A5A] text-[14px] font-bold hover:bg-red-50 transition-all hover:cursor-pointer"
             >
               Cancel
             </button>
-            <button className="px-8 py-2.5 rounded-lg bg-[#4F8AFF] text-white text-[14px] font-bold hover:bg-[#3B7AFF] transition-all shadow-sm shadow-blue-100">
+            <button className="px-8 py-2.5 rounded-lg bg-[#4F8AFF] text-white text-[14px] font-bold hover:bg-[#3B7AFF] transition-all shadow-sm shadow-blue-100 hover:cursor-pointer">
               Save Change
             </button>
           </div>

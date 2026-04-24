@@ -52,7 +52,7 @@ export default function Sidebar({ closeSidebar }: SidebarProps) {
       {closeSidebar && (
         <button
           onClick={closeSidebar}
-          className="absolute top-6 right-4 p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded-full transition-all z-20 lg:hidden"
+          className="absolute top-6 right-4 p-2 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded-full transition-all z-20 lg:hidden hover:cursor-pointer"
           aria-label="Close sidebar"
         >
           <X size={20} />
@@ -60,7 +60,7 @@ export default function Sidebar({ closeSidebar }: SidebarProps) {
       )}
 
       <div className="h-[72px] md:h-[90px] flex items-center justify-center px-6 border-b border-[#EDEFF2]">
-        <Link href="/" className="block transform transition-transform hover:scale-105">
+        <Link href="/" className="block transform transition-transform hover:scale-105 hover:cursor-pointer">
           <Image
             src="/logo.png"
             alt="Clinch"
@@ -88,7 +88,7 @@ export default function Sidebar({ closeSidebar }: SidebarProps) {
                 relative flex items-center gap-[14px]
                 h-[48px] pr-4 pl-[28px] outline-none focus:outline-none focus:ring-0
                 text-[15px]
-                transition-all duration-150
+                transition-all duration-150 hover:cursor-pointer
                 ${isActive
                   ? "bg-[#F3F7FF] mr-4 rounded-r-2xl"
                   : "text-[#64748B] hover:bg-[#F8FAFC] hover:text-[#0C1824] mr-4 rounded-r-2xl"
@@ -118,7 +118,7 @@ export default function Sidebar({ closeSidebar }: SidebarProps) {
           href="/auth/login"
           className="flex items-center gap-3 mx-3 px-3 h-[46px] rounded-xl
           text-[13.5px] font-medium text-black
-          hover:bg-red-50 transition-colors"
+          hover:bg-red-50 transition-colors hover:cursor-pointer"
         >
           <LogIn size={18} strokeWidth={1.8} />
           <span>Login</span>

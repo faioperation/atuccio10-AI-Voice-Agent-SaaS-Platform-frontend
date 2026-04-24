@@ -74,7 +74,7 @@ const SupportTicketTable = ({
               className="w-full pl-11 pr-4 py-2.5 bg-[#F8FAFC] border border-[#EDEFF2] rounded-xl text-[14px] text-[#0C1824] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#4F8AFF] transition-colors"
             />
           </div>
-          <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors text-[#64748B]">
+          <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors text-[#64748B] hover:cursor-pointer">
             <MoreVertical size={20} />
           </button>
         </div>
@@ -114,7 +114,7 @@ const SupportTicketTable = ({
                 <td className="px-8 py-5 text-center">
                   <button
                     onClick={() => onView(ticket)}
-                    className="bg-[#4F8AFF] hover:bg-[#3B7AFF] text-white px-6 py-1.5 rounded-lg text-[13px] font-bold transition-all shadow-sm active:scale-95"
+                    className="bg-[#4F8AFF] hover:bg-[#3B7AFF] text-white px-6 py-1.5 rounded-lg text-[13px] font-bold transition-all shadow-sm active:scale-95 hover:cursor-pointer"
                   >
                     View
                   </button>
@@ -140,7 +140,7 @@ const SupportTicketTable = ({
           <button 
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className="h-9 sm:h-10 px-3 sm:px-4 flex items-center gap-2 border border-[#EDEFF2] rounded-lg text-[13px] sm:text-[14px] font-semibold text-[#374151] hover:bg-white transition-all bg-white disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="h-9 sm:h-10 px-3 sm:px-4 flex items-center gap-2 border border-[#EDEFF2] rounded-lg text-[13px] sm:text-[14px] font-semibold text-[#374151] hover:bg-white transition-all bg-white disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:cursor-pointer"
           >
             <ChevronLeft size={16} className="sm:hidden" />
             <span className="hidden sm:inline">Previous</span>
@@ -151,7 +151,7 @@ const SupportTicketTable = ({
               <button
                 key={page}
                 onClick={() => onPageChange(page)}
-                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg text-[13px] sm:text-[14px] font-bold transition-all ${
+                className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg text-[13px] sm:text-[14px] font-bold transition-all hover:cursor-pointer ${
                   currentPage === page
                     ? "bg-[#4F8AFF] text-white shadow-md shadow-blue-100 ring-2 ring-blue-100"
                     : "text-[#64748B] hover:bg-white border border-[#EDEFF2] bg-white hover:text-[#4F8AFF]"
@@ -165,7 +165,7 @@ const SupportTicketTable = ({
           <button 
             onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}
-            className="h-9 sm:h-10 px-3 sm:px-5 flex items-center gap-2 bg-[#4F8AFF] rounded-lg text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#3B7AFF] transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="h-9 sm:h-10 px-3 sm:px-5 flex items-center gap-2 bg-[#4F8AFF] rounded-lg text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#3B7AFF] transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:cursor-pointer"
           >
             <span className="hidden sm:inline">Next</span>
             <ChevronRight size={16} className="sm:hidden" />

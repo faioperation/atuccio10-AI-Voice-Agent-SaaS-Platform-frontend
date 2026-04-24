@@ -10,7 +10,7 @@ const plans = [
     yearlyPrice: "59.99",
     features: [
       "Up to 100 AI qualification calls/mo",
-      "Live call transcription",
+      "Every Call Transcribed Automatically",
       "Basic CRM integration",
       "Email support",
     ],
@@ -64,21 +64,19 @@ const PricingSelection = ({ onBack }: { onBack: () => void }) => {
         >
           <button
             onClick={() => setBilling("monthly")}
-            className={`px-6 py-2 rounded-full text-[13px] font-semibold transition-all ${
-              billing === "monthly"
+            className={`px-6 py-2 rounded-full text-[13px] font-semibold transition-all ${billing === "monthly"
                 ? "bg-[#4F8AFF] text-white shadow-sm"
                 : "text-[#64748B] hover:text-[#0C1824] bg-transparent"
-            }`}
+              }`}
           >
             Monthly
           </button>
           <button
             onClick={() => setBilling("yearly")}
-            className={`px-6 py-2 rounded-full text-[13px] font-semibold transition-all ${
-              billing === "yearly"
+            className={`px-6 py-2 rounded-full text-[13px] font-semibold transition-all ${billing === "yearly"
                 ? "bg-[#4F8AFF] text-white shadow-sm"
                 : "text-[#64748B] hover:text-[#0C1824] bg-transparent"
-            }`}
+              }`}
           >
             Yearly
           </button>
@@ -90,8 +88,8 @@ const PricingSelection = ({ onBack }: { onBack: () => void }) => {
         - margin-top: 60px
         - gap: 24px
       */}
-      <div 
-        className="grid grid-cols-1 md:grid-cols-3 justify-center items-start mx-auto" 
+      <div
+        className="grid grid-cols-1 md:grid-cols-3 justify-center items-start mx-auto"
         style={{ marginTop: "60px", gap: "24px" }}
       >
         {plans.map((plan) => (

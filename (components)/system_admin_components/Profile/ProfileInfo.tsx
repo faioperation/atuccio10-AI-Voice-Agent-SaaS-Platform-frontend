@@ -17,7 +17,7 @@ const ProfileInfo = ({ onEdit, onChangePassword }: ProfileInfoProps) => {
         <h3 className="text-[20px] md:text-2xl font-bold text-[#0C1824]">Profile</h3>
         <button 
           onClick={onEdit}
-          className="w-10 h-10 rounded-full border border-[#E2E8F0] flex items-center justify-center text-black hover:bg-[#F8FAFC] transition-all"
+          className="w-10 h-10 rounded-full border border-[#E2E8F0] flex items-center justify-center text-black hover:bg-[#F8FAFC] transition-all hover:cursor-pointer"
         >
           <Edit3 size={18} />
         </button>
@@ -38,7 +38,7 @@ const ProfileInfo = ({ onEdit, onChangePassword }: ProfileInfoProps) => {
           </div>
           <button 
             onClick={onChangePassword}
-            className="bg-[#F3F3F3] hover:bg-[#E2E8F0] text-black px-6 py-2.5 rounded-lg text-[13px] font-semibold transition-all"
+            className="bg-[#F3F3F3] hover:bg-[#E2E8F0] text-black px-6 py-2.5 rounded-lg text-[13px] font-semibold transition-all hover:cursor-pointer"
           >
             Change Password
           </button>

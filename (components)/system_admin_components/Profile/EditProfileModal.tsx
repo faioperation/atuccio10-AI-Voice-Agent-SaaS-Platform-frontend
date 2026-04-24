@@ -30,7 +30,7 @@ const EditProfileModal = ({ isOpen, onClose }: EditProfileModalProps) => {
       <div className="relative bg-white rounded-2xl w-full max-w-[850px] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
         <div className="flex items-center justify-between px-8 py-6 border-b border-[#F1F5F9]">
           <h3 className="text-[18px] font-bold text-[#0C1824]">Edit Profile</h3>
-          <button onClick={onClose} className="text-[#94A3B8] hover:text-[#64748B] transition-colors">
+          <button onClick={onClose} className="text-[#94A3B8] hover:text-[#64748B] transition-colors hover:cursor-pointer">
             <X size={20} />
           </button>
         </div>
@@ -61,7 +61,7 @@ const EditProfileModal = ({ isOpen, onClose }: EditProfileModalProps) => {
             />
             <button 
               onClick={handleUploadClick}
-              className="bg-[#F3F3F3] hover:bg-[#E2E8F0] text-[#34322D] px-4 py-2 rounded-lg text-[13px] font-semibold transition-all"
+              className="bg-[#F3F3F3] hover:bg-[#E2E8F0] text-[#34322D] px-4 py-2 rounded-lg text-[13px] font-semibold transition-all hover:cursor-pointer"
             >
               Upload File
             </button>
@@ -101,11 +101,11 @@ const EditProfileModal = ({ isOpen, onClose }: EditProfileModalProps) => {
           <div className="flex items-center justify-end gap-3 pt-4">
             <button 
               onClick={onClose}
-              className="px-8 py-2.5 rounded-lg border border-[#FF5A5A] text-[#FF5A5A] text-[14px] font-bold hover:bg-red-50 transition-all"
+              className="px-8 py-2.5 rounded-lg border border-[#FF5A5A] text-[#FF5A5A] text-[14px] font-bold hover:bg-red-50 transition-all hover:cursor-pointer"
             >
               Cancel
             </button>
-            <button className="px-8 py-2.5 rounded-lg bg-[#4F8AFF] text-white text-[14px] font-bold hover:bg-[#3B7AFF] transition-all shadow-sm shadow-blue-100">
+            <button className="px-8 py-2.5 rounded-lg bg-[#4F8AFF] text-white text-[14px] font-bold hover:bg-[#3B7AFF] transition-all shadow-sm shadow-blue-100 hover:cursor-pointer">
               Save Change
             </button>
           </div>

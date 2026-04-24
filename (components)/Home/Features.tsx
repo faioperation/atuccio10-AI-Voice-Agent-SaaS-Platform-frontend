@@ -3,23 +3,23 @@
 const features = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A6BDC" strokeWidth="2"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2z" /><path d="M12 6v6l4 2" strokeLinecap="round" /></svg>,
-    title: "Live Coaching & Prompts",
-    desc: "Real-time battle cards surface silently so agents always say the right thing.",
+    title: "Live Scripting In Your Ear",
+    desc: "While you're on the phone, Clinch displays the exact script, rebuttal, or close for the moment you're in. Works for term, whole life, IUL, final expense, and mortgage protection.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A6BDC" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-    title: "AI Qualification & Filtering",
-    desc: "Voice AI contacts every lead in under 30s and qualifies intent, budget, timeline.",
+    title: "AI Qualifies Every Lead So You Don't Waste a Dial",
+    desc: "Clinch calls every lead within 30 seconds, asks the qualifying questions you'd ask, and only books the ones ready to buy. You show up to a calendar full of pre-qualified prospects.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A6BDC" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18" strokeLinecap="round" /></svg>,
-    title: "Live Call Transcription",
-    desc: "Every conversation transcribed in real time for compliance and coaching review.",
+    title: "Every Call Transcribed Automatically",
+    desc: "Every conversation recorded and transcribed for compliance, coaching, and CRM notes. Never take handwritten notes during a call again.",
   },
   {
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A6BDC" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" strokeLinecap="round" /></svg>,
-    title: "Smart Appointment Scheduling",
-    desc: "AI auto-books appointments based on lead urgency and agent availability.",
+    title: "Your Calendar Books Itself",
+    desc: "linch reads your calendar, matches qualified leads to your available slots, and books them — no back-and-forth emails, no missed appointments, no manual scheduling.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Features() {
               <span className="grad-text">insurance teams</span>
             </h2>
             <p className="header-p" style={{ fontSize: "15px", color: "#4a6070", lineHeight: 1.7, maxWidth: "360px", flexShrink: 0 }}>
-              Clinch is purpose-built for cadence, compliance, and closing — not bolted-on AI.
+              Clinch is built for how life insurance actually sells — rapport, fact-finding, objections, and the close. Not bolted-on AI that treats every call like a software demo
             </p>
           </div>
         </div>
@@ -111,8 +111,8 @@ export default function Features() {
                 A Qualified Lead Ready to Close
               </div>
               <h3 style={{ fontSize: "clamp(20px,2.2vw,26px)", fontWeight: 900, color: "#fff", lineHeight: 1.2, marginBottom: "14px", letterSpacing: "-0.02em" }}>
-                Your top closers never {" "}
-                <br />waste a dial again.
+                Never waste a dial {" "}
+                <br />on a tire kicker again.
               </h3>
               <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.65)", lineHeight: 1.65, marginBottom: "24px" }}>
                 AI pre-screens every lead so agents walk into every call knowing exactly who they&apos;re talking to and why they&apos;ll close.

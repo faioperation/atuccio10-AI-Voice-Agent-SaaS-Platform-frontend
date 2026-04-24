@@ -80,7 +80,7 @@ const UserDetailsModal = ({ user, isOpen, onClose }: UserDetailsModalProps) => {
         {/* Header */}
         <div className="flex items-center justify-between px-5 sm:px-8 py-4 sm:py-6 border-b border-[#EDEFF2]">
           <h3 className="text-[16px] sm:text-[18px] font-bold text-[#0C1824]">View User Details</h3>
-          <button onClick={onClose} className="p-1 hover:bg-[#F5F7FA] rounded-md transition-colors text-[#64748B]">
+          <button onClick={onClose} className="p-1 hover:bg-[#F5F7FA] rounded-md transition-colors text-[#64748B] hover:cursor-pointer">
             <X className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
           </button>
         </div>

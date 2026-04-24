@@ -50,7 +50,7 @@ const TicketDetailsModal = ({ ticket, isOpen, onClose }: TicketDetailsModalProps
         {/* Header */}
         <div className="flex items-center justify-between px-6 sm:px-8 py-5 sm:py-6 border-b border-[#EDEFF2]">
           <h3 className="text-[18px] sm:text-[20px] font-bold text-[#0C1824]">View Support Ticket</h3>
-          <button onClick={onClose} className="p-1 hover:bg-[#F5F7FA] rounded-md transition-colors text-[#64748B]">
+          <button onClick={onClose} className="p-1 hover:bg-[#F5F7FA] rounded-md transition-colors text-[#64748B] hover:cursor-pointer">
             <X className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
           </button>
         </div>
@@ -76,7 +76,7 @@ const TicketDetailsModal = ({ ticket, isOpen, onClose }: TicketDetailsModalProps
                   <span className="text-[13px] sm:text-[14px] font-medium text-[#64748B]">New</span>
                 </div>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 border border-[#EDEFF2] rounded-xl text-[14px] font-bold text-[#374151] hover:bg-[#F8FAFC] transition-colors shadow-sm">
+              <button className="flex items-center gap-2 px-4 py-2 border border-[#EDEFF2] rounded-xl text-[14px] font-bold text-[#374151] hover:bg-[#F8FAFC] transition-colors shadow-sm hover:cursor-pointer">
                 <Phone size={16} />
                 Call
               </button>
