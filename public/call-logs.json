@@ -5,7 +5,9 @@
     "phone": "(+33)7 35 55 21 02",
     "location": "Lansing, Illinois",
     "duration": "50 min",
-    "status": "50 min ago",
+    "lastCall": "50 min ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -13,8 +15,10 @@
     "name": "Dianne Russell",
     "phone": "(+33)7 35 55 45 43",
     "location": "Corona, Michigan",
-    "duration": "2 min",
-    "status": "2 hours ago",
+    "duration": "0 min",
+    "lastCall": "2 hours ago",
+    "status": "No Answer",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -22,8 +26,10 @@
     "name": "Theresa Webb",
     "phone": "(+33)7 35 55 50 46",
     "location": "Pasadena, Oklahoma",
-    "duration": "4 min",
-    "status": "6 hours ago",
+    "duration": "1 min",
+    "lastCall": "6 hours ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -32,7 +38,9 @@
     "phone": "(+33)6 55 59 32 88",
     "location": "Stockton, New Hampshire",
     "duration": "8 min",
-    "status": "1 day ago",
+    "lastCall": "1 day ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -40,8 +48,10 @@
     "name": "Kathryn Murphy",
     "phone": "(+33)7 45 55 87 71",
     "location": "Portland, Illinois",
-    "duration": "15 min",
-    "status": "8 days ago",
+    "duration": "0 min",
+    "lastCall": "8 days ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   },
   {
@@ -50,7 +60,9 @@
     "phone": "(+33)7 75 55 87 24",
     "location": "Syracuse, Connecticut",
     "duration": "12 min",
-    "status": "9 days ago",
+    "lastCall": "9 days ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -58,8 +70,10 @@
     "name": "Robert Fox",
     "phone": "(+33)7 00 55 57 60",
     "location": "Anchorage, Alaska",
-    "duration": "1 min",
-    "status": "12 days ago",
+    "duration": "0 min",
+    "lastCall": "12 days ago",
+    "status": "Failed",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -67,8 +81,10 @@
     "name": "Cody Fisher",
     "phone": "(+33)7 35 55 21 02",
     "location": "Naperville, Illinois",
-    "duration": "50 min",
-    "status": "1 min ago",
+    "duration": "15 min",
+    "lastCall": "1 min ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -76,8 +92,10 @@
     "name": "Esther Howard",
     "phone": "(+33)7 35 55 45 43",
     "location": "Lafayette, California",
-    "duration": "2 min",
-    "status": "50 min ago",
+    "duration": "0 min",
+    "lastCall": "50 min ago",
+    "status": "No Answer",
+    "outcome": "Follow Up",
     "transcriptUrl": "#"
   },
   {
@@ -85,8 +103,10 @@
     "name": "Bessie Cooper",
     "phone": "(+33)7 35 55 50 46",
     "location": "Lansing, Illinois",
-    "duration": "4 min",
-    "status": "2 hours ago",
+    "duration": "6 min",
+    "lastCall": "2 hours ago",
+    "status": "Completed",
+    "outcome": "Not Interested",
     "transcriptUrl": "#"
   },
   {
@@ -94,8 +114,10 @@
     "name": "Guy Hawkins",
     "phone": "(+33)6 55 59 32 88",
     "location": "Corona, Michigan",
-    "duration": "8 min",
-    "status": "6 hours ago",
+    "duration": "0 min",
+    "lastCall": "6 hours ago",
+    "status": "Voicemail",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -103,8 +125,10 @@
     "name": "Ralph Edwards",
     "phone": "(+33)7 45 55 87 71",
     "location": "Pasadena, Oklahoma",
-    "duration": "15 min",
-    "status": "1 day ago",
+    "duration": "10 min",
+    "lastCall": "1 day ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -112,8 +136,10 @@
     "name": "Ronald Richards",
     "phone": "(+33)7 75 55 87 24",
     "location": "Stockton, New Hampshire",
-    "duration": "12 min",
-    "status": "8 days ago",
+    "duration": "0 min",
+    "lastCall": "8 days ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   },
   {
@@ -121,8 +147,10 @@
     "name": "Arlene McCoy",
     "phone": "(+33)7 00 55 57 60",
     "location": "Portland, Illinois",
-    "duration": "1 min",
-    "status": "9 days ago",
+    "duration": "2 min",
+    "lastCall": "9 days ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -130,8 +158,10 @@
     "name": "Jane Cooper",
     "phone": "(+33)7 35 55 21 02",
     "location": "Syracuse, Connecticut",
-    "duration": "50 min",
-    "status": "12 days ago",
+    "duration": "20 min",
+    "lastCall": "12 days ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -139,8 +169,10 @@
     "name": "Jacob Jones",
     "phone": "(+33)7 35 55 45 43",
     "location": "Anchorage, Alaska",
-    "duration": "2 min",
-    "status": "1 min ago",
+    "duration": "0 min",
+    "lastCall": "1 min ago",
+    "status": "No Answer",
+    "outcome": "Follow Up",
     "transcriptUrl": "#"
   },
   {
@@ -148,8 +180,10 @@
     "name": "Dianne Russell",
     "phone": "(+33)7 35 55 50 46",
     "location": "Naperville, Illinois",
-    "duration": "4 min",
-    "status": "50 min ago",
+    "duration": "5 min",
+    "lastCall": "50 min ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -157,8 +191,10 @@
     "name": "Theresa Webb",
     "phone": "(+33)6 55 59 32 88",
     "location": "Lafayette, California",
-    "duration": "8 min",
-    "status": "2 hours ago",
+    "duration": "1 min",
+    "lastCall": "2 hours ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -166,8 +202,10 @@
     "name": "Courtney Henry",
     "phone": "(+33)7 45 55 87 71",
     "location": "Lansing, Illinois",
-    "duration": "15 min",
-    "status": "6 hours ago",
+    "duration": "18 min",
+    "lastCall": "6 hours ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -175,8 +213,10 @@
     "name": "Kathryn Murphy",
     "phone": "(+33)7 75 55 87 24",
     "location": "Corona, Michigan",
-    "duration": "12 min",
-    "status": "1 day ago",
+    "duration": "0 min",
+    "lastCall": "1 day ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   },
   {
@@ -184,8 +224,10 @@
     "name": "Eleanor Pena",
     "phone": "(+33)7 00 55 57 60",
     "location": "Pasadena, Oklahoma",
-    "duration": "1 min",
-    "status": "8 days ago",
+    "duration": "0 min",
+    "lastCall": "8 days ago",
+    "status": "Failed",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -193,8 +235,10 @@
     "name": "Robert Fox",
     "phone": "(+33)7 35 55 21 02",
     "location": "Stockton, New Hampshire",
-    "duration": "50 min",
-    "status": "9 days ago",
+    "duration": "25 min",
+    "lastCall": "9 days ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -202,8 +246,10 @@
     "name": "Cody Fisher",
     "phone": "(+33)7 35 55 45 43",
     "location": "Portland, Illinois",
-    "duration": "2 min",
-    "status": "12 days ago",
+    "duration": "0 min",
+    "lastCall": "12 days ago",
+    "status": "No Answer",
+    "outcome": "Follow Up",
     "transcriptUrl": "#"
   },
   {
@@ -211,8 +257,10 @@
     "name": "Esther Howard",
     "phone": "(+33)7 35 55 50 46",
     "location": "Syracuse, Connecticut",
-    "duration": "4 min",
-    "status": "1 min ago",
+    "duration": "7 min",
+    "lastCall": "1 min ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -220,8 +268,10 @@
     "name": "Bessie Cooper",
     "phone": "(+33)6 55 59 32 88",
     "location": "Anchorage, Alaska",
-    "duration": "8 min",
-    "status": "50 min ago",
+    "duration": "2 min",
+    "lastCall": "50 min ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -229,8 +279,10 @@
     "name": "Guy Hawkins",
     "phone": "(+33)7 45 55 87 71",
     "location": "Naperville, Illinois",
-    "duration": "15 min",
-    "status": "2 hours ago",
+    "duration": "13 min",
+    "lastCall": "2 hours ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -238,8 +290,10 @@
     "name": "Ralph Edwards",
     "phone": "(+33)7 75 55 87 24",
     "location": "Lafayette, California",
-    "duration": "12 min",
-    "status": "6 hours ago",
+    "duration": "0 min",
+    "lastCall": "6 hours ago",
+    "status": "Voicemail",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -247,8 +301,10 @@
     "name": "Ronald Richards",
     "phone": "(+33)7 00 55 57 60",
     "location": "Lansing, Illinois",
-    "duration": "1 min",
-    "status": "1 day ago",
+    "duration": "4 min",
+    "lastCall": "1 day ago",
+    "status": "Completed",
+    "outcome": "Not Interested",
     "transcriptUrl": "#"
   },
   {
@@ -256,8 +312,10 @@
     "name": "Arlene McCoy",
     "phone": "(+33)7 35 55 21 02",
     "location": "Corona, Michigan",
-    "duration": "50 min",
-    "status": "8 days ago",
+    "duration": "0 min",
+    "lastCall": "8 days ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   },
   {
@@ -265,8 +323,10 @@
     "name": "Jane Cooper",
     "phone": "(+33)7 35 55 45 43",
     "location": "Pasadena, Oklahoma",
-    "duration": "2 min",
-    "status": "9 days ago",
+    "duration": "19 min",
+    "lastCall": "9 days ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -274,8 +334,10 @@
     "name": "Jacob Jones",
     "phone": "(+33)7 35 55 50 46",
     "location": "Stockton, New Hampshire",
-    "duration": "4 min",
-    "status": "12 days ago",
+    "duration": "1 min",
+    "lastCall": "12 days ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -283,8 +345,10 @@
     "name": "Dianne Russell",
     "phone": "(+33)6 55 59 32 88",
     "location": "Portland, Illinois",
-    "duration": "8 min",
-    "status": "1 min ago",
+    "duration": "9 min",
+    "lastCall": "1 min ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -292,8 +356,10 @@
     "name": "Theresa Webb",
     "phone": "(+33)7 45 55 87 71",
     "location": "Syracuse, Connecticut",
-    "duration": "15 min",
-    "status": "50 min ago",
+    "duration": "0 min",
+    "lastCall": "50 min ago",
+    "status": "No Answer",
+    "outcome": "Follow Up",
     "transcriptUrl": "#"
   },
   {
@@ -301,8 +367,10 @@
     "name": "Courtney Henry",
     "phone": "(+33)7 75 55 87 24",
     "location": "Anchorage, Alaska",
-    "duration": "12 min",
-    "status": "2 hours ago",
+    "duration": "11 min",
+    "lastCall": "2 hours ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -310,8 +378,10 @@
     "name": "Kathryn Murphy",
     "phone": "(+33)7 00 55 57 60",
     "location": "Naperville, Illinois",
-    "duration": "1 min",
-    "status": "6 hours ago",
+    "duration": "0 min",
+    "lastCall": "6 hours ago",
+    "status": "Failed",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -319,8 +389,10 @@
     "name": "Eleanor Pena",
     "phone": "(+33)7 35 55 21 02",
     "location": "Lafayette, California",
-    "duration": "50 min",
-    "status": "1 day ago",
+    "duration": "22 min",
+    "lastCall": "1 day ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -328,8 +400,10 @@
     "name": "Robert Fox",
     "phone": "(+33)7 35 55 45 43",
     "location": "Lansing, Illinois",
-    "duration": "2 min",
-    "status": "8 days ago",
+    "duration": "3 min",
+    "lastCall": "8 days ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -337,8 +411,10 @@
     "name": "Cody Fisher",
     "phone": "(+33)7 35 55 50 46",
     "location": "Corona, Michigan",
-    "duration": "4 min",
-    "status": "9 days ago",
+    "duration": "14 min",
+    "lastCall": "9 days ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -346,8 +422,10 @@
     "name": "Esther Howard",
     "phone": "(+33)6 55 59 32 88",
     "location": "Pasadena, Oklahoma",
-    "duration": "8 min",
-    "status": "12 days ago",
+    "duration": "0 min",
+    "lastCall": "12 days ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   },
   {
@@ -355,8 +433,10 @@
     "name": "Bessie Cooper",
     "phone": "(+33)7 45 55 87 71",
     "location": "Stockton, New Hampshire",
-    "duration": "15 min",
-    "status": "1 min ago",
+    "duration": "16 min",
+    "lastCall": "1 min ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -365,7 +445,9 @@
     "phone": "(+33)7 75 55 87 24",
     "location": "Portland, Illinois",
     "duration": "12 min",
-    "status": "50 min ago",
+    "lastCall": "50 min ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -373,8 +455,10 @@
     "name": "Ralph Edwards",
     "phone": "(+33)7 00 55 57 60",
     "location": "Syracuse, Connecticut",
-    "duration": "1 min",
-    "status": "2 hours ago",
+    "duration": "0 min",
+    "lastCall": "2 hours ago",
+    "status": "No Answer",
+    "outcome": "Follow Up",
     "transcriptUrl": "#"
   },
   {
@@ -382,8 +466,10 @@
     "name": "Ronald Richards",
     "phone": "(+33)7 35 55 21 02",
     "location": "Anchorage, Alaska",
-    "duration": "50 min",
-    "status": "6 hours ago",
+    "duration": "21 min",
+    "lastCall": "6 hours ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -391,8 +477,10 @@
     "name": "Arlene McCoy",
     "phone": "(+33)7 35 55 45 43",
     "location": "Naperville, Illinois",
-    "duration": "2 min",
-    "status": "1 day ago",
+    "duration": "1 min",
+    "lastCall": "1 day ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -400,8 +488,10 @@
     "name": "Jane Cooper",
     "phone": "(+33)7 35 55 50 46",
     "location": "Lafayette, California",
-    "duration": "4 min",
-    "status": "8 days ago",
+    "duration": "18 min",
+    "lastCall": "8 days ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -409,8 +499,10 @@
     "name": "Jacob Jones",
     "phone": "(+33)6 55 59 32 88",
     "location": "Lansing, Illinois",
-    "duration": "8 min",
-    "status": "9 days ago",
+    "duration": "0 min",
+    "lastCall": "9 days ago",
+    "status": "Voicemail",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -418,8 +510,10 @@
     "name": "Dianne Russell",
     "phone": "(+33)7 45 55 87 71",
     "location": "Corona, Michigan",
-    "duration": "15 min",
-    "status": "12 days ago",
+    "duration": "13 min",
+    "lastCall": "12 days ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -427,8 +521,10 @@
     "name": "Theresa Webb",
     "phone": "(+33)7 75 55 87 24",
     "location": "Pasadena, Oklahoma",
-    "duration": "12 min",
-    "status": "1 min ago",
+    "duration": "0 min",
+    "lastCall": "1 min ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   },
   {
@@ -436,8 +532,10 @@
     "name": "Courtney Henry",
     "phone": "(+33)7 00 55 57 60",
     "location": "Stockton, New Hampshire",
-    "duration": "1 min",
-    "status": "50 min ago",
+    "duration": "7 min",
+    "lastCall": "50 min ago",
+    "status": "Completed",
+    "outcome": "Not Interested",
     "transcriptUrl": "#"
   },
   {
@@ -445,8 +543,10 @@
     "name": "Kathryn Murphy",
     "phone": "(+33)7 35 55 21 02",
     "location": "Portland, Illinois",
-    "duration": "50 min",
-    "status": "2 hours ago",
+    "duration": "24 min",
+    "lastCall": "2 hours ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -455,7 +555,9 @@
     "phone": "(+33)7 35 55 45 43",
     "location": "Syracuse, Connecticut",
     "duration": "2 min",
-    "status": "6 hours ago",
+    "lastCall": "6 hours ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -463,8 +565,10 @@
     "name": "Robert Fox",
     "phone": "(+33)7 35 55 50 46",
     "location": "Anchorage, Alaska",
-    "duration": "4 min",
-    "status": "1 day ago",
+    "duration": "17 min",
+    "lastCall": "1 day ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -472,8 +576,10 @@
     "name": "Cody Fisher",
     "phone": "(+33)6 55 59 32 88",
     "location": "Naperville, Illinois",
-    "duration": "8 min",
-    "status": "8 days ago",
+    "duration": "0 min",
+    "lastCall": "8 days ago",
+    "status": "Failed",
+    "outcome": "No Conversation",
     "transcriptUrl": "#"
   },
   {
@@ -482,7 +588,9 @@
     "phone": "(+33)7 45 55 87 71",
     "location": "Lafayette, California",
     "duration": "15 min",
-    "status": "9 days ago",
+    "lastCall": "9 days ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -490,8 +598,10 @@
     "name": "Bessie Cooper",
     "phone": "(+33)7 75 55 87 24",
     "location": "Lansing, Illinois",
-    "duration": "12 min",
-    "status": "12 days ago",
+    "duration": "0 min",
+    "lastCall": "12 days ago",
+    "status": "No Answer",
+    "outcome": "Follow Up",
     "transcriptUrl": "#"
   },
   {
@@ -499,8 +609,10 @@
     "name": "Guy Hawkins",
     "phone": "(+33)7 00 55 57 60",
     "location": "Corona, Michigan",
-    "duration": "1 min",
-    "status": "1 min ago",
+    "duration": "9 min",
+    "lastCall": "1 min ago",
+    "status": "Completed",
+    "outcome": "Interested",
     "transcriptUrl": "#"
   },
   {
@@ -508,8 +620,10 @@
     "name": "Ralph Edwards",
     "phone": "(+33)7 35 55 21 02",
     "location": "Pasadena, Oklahoma",
-    "duration": "50 min",
-    "status": "50 min ago",
+    "duration": "20 min",
+    "lastCall": "50 min ago",
+    "status": "Completed",
+    "outcome": "Qualified",
     "transcriptUrl": "#"
   },
   {
@@ -517,8 +631,10 @@
     "name": "Ronald Richards",
     "phone": "(+33)7 35 55 45 43",
     "location": "Stockton, New Hampshire",
-    "duration": "2 min",
-    "status": "2 hours ago",
+    "duration": "1 min",
+    "lastCall": "2 hours ago",
+    "status": "Busy",
+    "outcome": "Callback",
     "transcriptUrl": "#"
   },
   {
@@ -526,8 +642,10 @@
     "name": "Arlene McCoy",
     "phone": "(+33)7 35 55 50 46",
     "location": "Portland, Illinois",
-    "duration": "4 min",
-    "status": "6 hours ago",
+    "duration": "11 min",
+    "lastCall": "6 hours ago",
+    "status": "Completed",
+    "outcome": "Positive",
     "transcriptUrl": "#"
   },
   {
@@ -535,8 +653,10 @@
     "name": "Jane Cooper",
     "phone": "(+33)6 55 59 32 88",
     "location": "Syracuse, Connecticut",
-    "duration": "8 min",
-    "status": "1 day ago",
+    "duration": "0 min",
+    "lastCall": "1 day ago",
+    "status": "Switched Off",
+    "outcome": "Unavailable",
     "transcriptUrl": "#"
   }
 ]

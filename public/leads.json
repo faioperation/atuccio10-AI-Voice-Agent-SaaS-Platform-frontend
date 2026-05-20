@@ -1,3 +1,4 @@
+
 [
   {
     "id": "01",
@@ -5,6 +6,7 @@
     "phone": "(+33)7 00 55 57 60",
     "email": "jessica.hanson@example.com",
     "date": "15 May 2020 6:00 pm",
+    "platform": "Salesforce",
     "status": "New"
   },
   {
@@ -13,6 +15,7 @@
     "phone": "(+33)7 35 55 21 02",
     "email": "sara.cruz@example.com",
     "date": "15 May 2020 7:00 pm",
+    "platform": "HubSpot",
     "status": "Contacted"
   },
   {
@@ -21,6 +24,7 @@
     "phone": "(+33)7 35 55 45 43",
     "email": "alma.lawson@example.com",
     "date": "15 May 2020 9:00 pm",
+    "platform": "Zoho CRM",
     "status": "New"
   },
   {
@@ -29,6 +33,7 @@
     "phone": "(+33)7 35 55 50 46",
     "email": "deanna.curtis@example.com",
     "date": "15 May 2020 8:00 pm",
+    "platform": "Pipedrive",
     "status": "Qualified"
   },
   {
@@ -37,6 +42,7 @@
     "phone": "(+33)6 55 59 32 88",
     "email": "jackson.graham@example.com",
     "date": "15 May 2020 6:00 pm",
+    "platform": "GoHighLevel",
     "status": "New"
   },
   {
@@ -45,6 +51,7 @@
     "phone": "(+33)7 45 55 87 71",
     "email": "felicia.reid@example.com",
     "date": "15 May 2020 11:00 pm",
+    "platform": "Freshsales",
     "status": "Lost"
   },
   {
@@ -53,6 +60,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "nathan.roberts@example.com",
     "date": "15 May 2020 6:00 pm",
+    "platform": "Monday CRM",
     "status": "New"
   },
   {
@@ -61,6 +69,7 @@
     "phone": "(+33)7 55 55 87 24",
     "email": "willie.jennings@example.com",
     "date": "15 May 2020 10:00 pm",
+    "platform": "Close CRM",
     "status": "Qualified"
   },
   {
@@ -69,6 +78,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "bill.sanders@example.com",
     "date": "15 May 2020 7:00 pm",
+    "platform": "Salesforce",
     "status": "Contacted"
   },
   {
@@ -77,6 +87,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "debbie.baker@example.com",
     "date": "15 May 2020 11:00 pm",
+    "platform": "HubSpot",
     "status": "New"
   },
   {
@@ -85,6 +96,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "kenzi.lawson@example.com",
     "date": "15 May 2020 10:00 pm",
+    "platform": "Zoho CRM",
     "status": "New"
   },
   {
@@ -93,6 +105,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "tanya.hill@example.com",
     "date": "15 May 2020 11:00 pm",
+    "platform": "Pipedrive",
     "status": "Lost"
   },
   {
@@ -101,6 +114,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "curtis.weaver@example.com",
     "date": "15 May 2020 5:00 pm",
+    "platform": "GoHighLevel",
     "status": "Qualified"
   },
   {
@@ -109,6 +123,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "nevaeh.simmons@example.com",
     "date": "15 May 2020 8:00 pm",
+    "platform": "Freshsales",
     "status": "New"
   },
   {
@@ -117,6 +132,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "georgia.young@example.com",
     "date": "15 May 2020 5:00 pm",
+    "platform": "Monday CRM",
     "status": "Contacted"
   },
   {
@@ -125,6 +141,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "debra.holt@example.com",
     "date": "15 May 2020 9:00 pm",
+    "platform": "Close CRM",
     "status": "New"
   },
   {
@@ -133,6 +150,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "tim.jennings@example.com",
     "date": "15 May 2020 6:00 pm",
+    "platform": "Salesforce",
     "status": "New"
   },
   {
@@ -141,6 +159,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "michael.mitc@example.com",
     "date": "15 May 2020 8:00 pm",
+    "platform": "HubSpot",
     "status": "Lost"
   },
   {
@@ -149,6 +168,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "brooklyn.simm@example.com",
     "date": "15 May 2020 7:00 pm",
+    "platform": "Zoho CRM",
     "status": "Qualified"
   },
   {
@@ -157,6 +177,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "cody.fisher@example.com",
     "date": "15 May 2020 10:00 pm",
+    "platform": "Pipedrive",
     "status": "New"
   },
   {
@@ -165,6 +186,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "cameron.will@example.com",
     "date": "15 May 2020 6:00 pm",
+    "platform": "GoHighLevel",
     "status": "Contacted"
   },
   {
@@ -173,6 +195,7 @@
     "phone": "(+33)7 75 55 87 24",
     "email": "kristin.watson@example.com",
     "date": "15 May 2020 9:00 pm",
+    "platform": "Freshsales",
     "status": "New"
   }
 ]
