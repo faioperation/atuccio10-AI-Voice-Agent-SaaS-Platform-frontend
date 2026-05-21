@@ -4,11 +4,8 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
-// import useAxiosSecure from "@/hooks/useAxios";
-// import { useAuth } from "@/components/buisness_dashboard_components/common component/Providers";
-// import Cookies from "js-cookie";
-// import axios from "axios";
-// import { toast } from "react-toastify";
+import { useAuth } from "@/contexts/AuthContext";
+import { getRedirectIntent, clearRedirectIntent } from "@/features/auth/utils/auth.utils";
 
 interface LoginFormInputs {
   email: string;
@@ -20,10 +17,25 @@ export default function LoginPage() {
   const router = useRouter();
   const [loading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const { login } = useAuth();
 
   const onSubmit = async (data: LoginFormInputs) => {
     console.log(data);
-    // TODO: implement logic here, e.g. axios post, Cookies.set, login() etc.
+    // TODO: replace the block below with the real API call when backend is ready:
+    //
+    // import { authApi } from "@/features/auth/api/auth.api";
+    // import { ApiError } from "@/lib/api/client";
+    //
+    // try {
+    //   const res = await authApi.login(data);         // POST /auth/login/
+    //   login(res);                                    // set user in AuthContext
+    //   const intent = getRedirectIntent();
+    //   clearRedirectIntent();
+    //   // PricingGrid's useEffect will auto-trigger checkout if a plan is pending.
+    //   router.push(intent && !intent.startsWith("/auth") ? intent : "/");
+    // } catch (err) {
+    //   // handle field errors …
+    // }
   };
 
   return (
