@@ -1,5 +1,10 @@
 import { apiClient } from "@/lib/api/client";
-import type { BillingPlansResponse, SubscribeRequest, SubscribeResponse } from "./billing.types";
+import type {
+  BillingPlansResponse,
+  SubscribeRequest,
+  SubscribeResponse,
+  PaymentSessionResponse,
+} from "./billing.types";
 
 export const billingApi = {
   getPlans: (): Promise<BillingPlansResponse> =>
@@ -7,4 +12,7 @@ export const billingApi = {
 
   subscribe: (data: SubscribeRequest): Promise<SubscribeResponse> =>
     apiClient.post<SubscribeResponse>("/billing/subscribe/", data),
+
+  verifySession: (sessionId: string): Promise<PaymentSessionResponse> =>
+    apiClient.get<PaymentSessionResponse>(`/billing/success/?session_id=${encodeURIComponent(sessionId)}`),
 };

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Sidebar from "@/components/buisness_dashboard_components/common component/Sidebar";
 import Header from "@/components/buisness_dashboard_components/common component/Header";
+import RoleGuard from "@/features/auth/components/RoleGuard";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
+    <RoleGuard allowedRoles={["business_admin"]}>
     <div className="flex min-h-screen bg-[#F5F7FA]">
 
       {/* ── Desktop Sidebar (sticky) ── */}
@@ -54,5 +56,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
       </div>
     </div>
+    </RoleGuard>
   );
 }

@@ -7,12 +7,13 @@ import {
   Layers,
   LifeBuoy,
   UserCircle,
-  LogIn,
+  LogOut,
   X,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useAuth } from "@/contexts/AuthContext";
 
 const menuItems = [
   { name: "Dashboard", href: "/system_admin", icon: LayoutDashboard },
@@ -29,6 +30,7 @@ interface SidebarProps {
 
 export default function SystemSidebar({ closeSidebar }: SidebarProps) {
   const pathname = usePathname();
+  const { logout } = useAuth();
 
   const handleLinkClick = () => {
     if (closeSidebar) closeSidebar();
@@ -103,15 +105,15 @@ export default function SystemSidebar({ closeSidebar }: SidebarProps) {
       {/* ── Logout ── */}
       <div className="pb-4">
         <div className="h-px bg-[#E5E7EB] mx-4 mb-2" />
-        <Link
-          href="/auth/login"
-          className="flex items-center gap-3 mx-3 px-3 h-[46px] rounded-xl
-          text-[13.5px] font-medium text-black
+        <button
+          onClick={() => logout()}
+          className="w-full flex items-center gap-3 mx-3 px-3 h-[46px] rounded-xl
+          text-[13.5px] font-medium text-red-500
           hover:bg-red-50 transition-colors hover:cursor-pointer"
         >
-          <LogIn size={18} strokeWidth={1.8} />
-          <span>Login</span>
-        </Link>
+          <LogOut size={18} strokeWidth={1.8} />
+          <span>Logout</span>
+        </button>
       </div>
     </aside>
   );

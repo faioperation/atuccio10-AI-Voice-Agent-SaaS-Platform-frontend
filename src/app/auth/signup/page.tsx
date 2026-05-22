@@ -16,6 +16,7 @@ import {
 } from "@/features/auth/utils/auth.utils";
 import { ApiError } from "@/lib/api/client";
 import AuthAlert from "@/features/auth/components/AuthAlert";
+import { toast } from "react-hot-toast";
 
 interface SignupFormInputs {
   name: string;
@@ -81,7 +82,8 @@ function SignupContent() {
       setPendingVerificationEmail(res.user.email);
 
       if (!res.user.is_verified) {
-        router.push("/auth/verify-email");
+        sessionStorage.setItem("otp_trigger_needed", "true");
+        router.push("/auth/otp");
       } else {
         const intent = getRedirectIntent();
         clearRedirectIntent();
@@ -96,16 +98,22 @@ function SignupContent() {
           try {
             await resendOtpMutation.mutateAsync({ email: data.email, type: "email_verify" });
             setPendingVerificationEmail(data.email);
-            router.push("/auth/verify-email");
+            
+            // Set cooldown in sessionStorage so the OTP page knows it was just sent
+            const initialCooldown = 30; // 30s
+            const expires = Date.now() + initialCooldown * 1000;
+            sessionStorage.setItem("otp_cooldown_expires_at", String(expires));
+            sessionStorage.setItem("otp_resend_count", "1");
+
+            router.push("/auth/otp");
             return;
           } catch (resendError) {
             if (resendError instanceof ApiError && resendError.status === 400) {
               // Account is verified; direct user to login
-              setFormError(
-                "This email is already registered. Please log in to your account."
-              );
+              toast.error("This email is already registered. Please log in to your account.");
+              router.push("/auth/login");
             } else {
-              setError("email", { message: fieldErrors.email });
+              setError("email", { message: fieldErrors.email || "Email already exists." });
             }
             return;
           }

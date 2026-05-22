@@ -1,5 +1,15 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BACKEND_URL;
-const AUTH_BASE_URL = process.env.NEXT_PUBLIC_API_BACKEND_AUTH_URL;
+// Direct backend URLs — used by server-side code (SSR, Server Components, Route Handlers).
+// These are never sent to the browser bundle; they stay server-only at runtime.
+const BACKEND_API_URL = process.env.NEXT_PUBLIC_API_BACKEND_URL;
+const BACKEND_AUTH_URL = process.env.NEXT_PUBLIC_API_BACKEND_AUTH_URL;
+
+// Browser-side: route through our Next.js proxy (same origin → no CORS, cookies work).
+// Server-side: call the backend directly (server-to-server, no CORS).
+const isBrowser = typeof window !== "undefined";
+const API_BASE_URL = isBrowser ? "/api/backend" : BACKEND_API_URL;
+const AUTH_BASE_URL = isBrowser ? "/api/auth" : BACKEND_AUTH_URL;
+
+// ── Error class ───────────────────────────────────────────────────────────────
 
 export class ApiError extends Error {
   constructor(
@@ -13,8 +23,12 @@ export class ApiError extends Error {
   }
 }
 
+// ── Core fetch wrapper ────────────────────────────────────────────────────────
+
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(url, {
+    // Proxy requests are same-origin; direct backend requests need credentials.
+    credentials: isBrowser ? "same-origin" : "include",
     headers: {
       "Content-Type": "application/json",
       ...options?.headers,
@@ -34,6 +48,8 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
 
   return response.json() as Promise<T>;
 }
+
+// ── API client ────────────────────────────────────────────────────────────────
 
 export const apiClient = {
   get: <T>(path: string, options?: RequestInit): Promise<T> =>

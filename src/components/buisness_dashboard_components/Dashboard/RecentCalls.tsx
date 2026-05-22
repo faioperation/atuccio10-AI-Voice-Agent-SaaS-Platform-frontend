@@ -1,17 +1,25 @@
-import React from "react";
-import { MoreVertical } from "lucide-react";
+import { MoreVertical, PhoneOff } from "lucide-react";
+import type { RecentCall } from "@/features/dashboard/api/dashboard.types";
 
-const calls = [
-  { id: "01", name: "Jane Cooper",    phone: "(+33)7 00 55 57 60", location: "Lafayette, California",   duration: "1 min",  status: "1 min ago"   },
-  { id: "02", name: "Jacob Jones",    phone: "(+33)7 35 55 21 02", location: "Lansing, Illinois",       duration: "50 min", status: "50 min ago"  },
-  { id: "03", name: "Dianne Russell", phone: "(+33)7 35 55 45 43", location: "Corona, Michigan",        duration: "2 min",  status: "2 hours ago" },
-  { id: "04", name: "Theresa Webb",   phone: "(+33)7 35 55 50 46", location: "Pasadena, Oklahoma",      duration: "4 min",  status: "6 hours ago" },
-  { id: "05", name: "Courtney Henry", phone: "(+33)6 55 59 32 88", location: "Stockton, New Hampshire", duration: "8 min",  status: "1 day ago"   },
-  { id: "06", name: "Kathryn Murphy", phone: "(+33)7 45 55 87 71", location: "Portland, Illinois",      duration: "4 min",  status: "8 day ago"   },
-  { id: "07", name: "Eleanor Pena",   phone: "(+33)7 75 55 87 24", location: "Syracuse, Connecticut",   duration: "1 min",  status: "9 day ago"   },
-];
+interface RecentCallsProps {
+  calls?: RecentCall[];
+  isLoading?: boolean;
+}
 
-export default function RecentCalls() {
+function SkeletonRow() {
+  return (
+    <tr>
+      <td className="pl-6 pr-2 py-[13px]"><div className="h-3 w-6 bg-[#F1F4F9] rounded animate-pulse" /></td>
+      <td className="px-3 py-[13px]"><div className="h-3 w-28 bg-[#F1F4F9] rounded animate-pulse" /></td>
+      <td className="px-3 py-[13px]"><div className="h-3 w-32 bg-[#F1F4F9] rounded animate-pulse" /></td>
+      <td className="px-3 py-[13px]"><div className="h-3 w-36 bg-[#F1F4F9] rounded animate-pulse" /></td>
+      <td className="px-3 py-[13px]"><div className="h-3 w-12 bg-[#F1F4F9] rounded animate-pulse" /></td>
+      <td className="px-3 py-[13px]"><div className="h-3 w-16 bg-[#F1F4F9] rounded animate-pulse" /></td>
+    </tr>
+  );
+}
+
+export default function RecentCalls({ calls, isLoading }: RecentCallsProps) {
   return (
     <div className="bg-white rounded-2xl border border-[#EDEFF2] shadow-sm overflow-hidden flex flex-col">
 
@@ -37,19 +45,34 @@ export default function RecentCalls() {
             </tr>
           </thead>
           <tbody className="divide-y divide-[#F1F4F9]">
-            {calls.map((call) => (
-              <tr
-                key={call.id}
-                className="hover:bg-[#F8FAFC] transition-colors"
-              >
-                <td className="pl-6 pr-2 py-[13px] text-[12px] text-[#94A3B8]">{call.id}</td>
-                <td className="px-3 py-[13px] text-[13px] font-semibold text-[#0C1824]">{call.name}</td>
-                <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.phone}</td>
-                <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.location}</td>
-                <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.duration}</td>
-                <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.status}</td>
+            {isLoading ? (
+              Array.from({ length: 5 }).map((_, i) => <SkeletonRow key={i} />)
+            ) : !calls || calls.length === 0 ? (
+              <tr>
+                <td colSpan={6}>
+                  <div className="flex flex-col items-center justify-center py-12 gap-2">
+                    <PhoneOff size={28} className="text-[#CBD5E1]" strokeWidth={1.5} />
+                    <p className="text-[13px] text-[#94A3B8] font-medium">No recent calls</p>
+                  </div>
+                </td>
               </tr>
-            ))}
+            ) : (
+              calls.map((call, index) => (
+                <tr
+                  key={call.id}
+                  className="hover:bg-[#F8FAFC] transition-colors"
+                >
+                  <td className="pl-6 pr-2 py-[13px] text-[12px] text-[#94A3B8]">
+                    {String(index + 1).padStart(2, "0")}
+                  </td>
+                  <td className="px-3 py-[13px] text-[13px] font-semibold text-[#0C1824]">{call.name}</td>
+                  <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.phone}</td>
+                  <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.location}</td>
+                  <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.duration}</td>
+                  <td className="px-3 py-[13px] text-[13px] text-[#64748B]">{call.status}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

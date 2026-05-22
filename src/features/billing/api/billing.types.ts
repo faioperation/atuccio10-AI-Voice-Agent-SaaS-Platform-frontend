@@ -38,6 +38,24 @@ export interface SubscribeResponse {
   session_id: string;
 }
 
+// ── Payment Session Verification ─────────────────────────────────────────────
+// Backend activates subscription and returns session details.
+// All detail fields are optional — the presence of any response means success.
+
+export interface PaymentSessionResponse {
+  // Core success indicators
+  status?: string;
+  message?: string;
+  // Plan detail fields (backend uses "price", not "amount")
+  plan_name?: string;
+  billing_cycle?: BillingCycle;
+  price?: string;
+  currency?: Currency;
+  customer_email?: string;
+  plan_start_date?: string;
+  plan_end_date?: string;
+}
+
 // ── UI-layer prop types ──────────────────────────────────────────────────────
 
 export interface PricingCardProps {

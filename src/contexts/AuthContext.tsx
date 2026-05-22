@@ -1,122 +1,106 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
-// import { useQuery } from "@tanstack/react-query";
-// import useAxiosSecure from "@/hooks/useAxiosSecure";
-// import Cookies from "js-cookie";
-import Loader from "@/components/Shared/Loader";
+import React, { createContext, useCallback, useContext, useEffect } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { authApi } from "@/features/auth/api/auth.api";
+import type { AuthUser } from "@/features/auth/api/auth.types";
 
-interface User {
-  id?: string;
-  name?: string;
-  email?: string;
-  [key: string]: any;
-}
+// ── Types ─────────────────────────────────────────────────────────────────────
 
 interface AuthContextType {
-  user: User | null;
+  user: AuthUser | null;
   loading: boolean;
-  login: (data: any) => void;
-  logout: () => void;
-  // profile: any;
-  // avatar: string;
+  isAuthenticated: boolean;
+  login: (userData: AuthUser) => void;
+  logout: () => Promise<void>;
+  refetchUser: () => Promise<AuthUser | null>;
+  updateUser: (userData: AuthUser) => void;
 }
+
+// ── Context ───────────────────────────────────────────────────────────────────
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// ── Provider ──────────────────────────────────────────────────────────────────
+
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(false);
+  const queryClient = useQueryClient();
 
-  // const axiosSecure = useAxiosSecure();
-
-  /* ======================
-      FUTURE BACKEND INTEGRATION
-      When your backend is ready, uncomment the imports and logic below.
-  ====================== */
-
-  /*
-  const accessToken = Cookies.get("accessToken");
-
-  const { data: profile, isLoading } = useQuery({
+  const { data: user, isLoading, refetch } = useQuery<AuthUser | null>({
     queryKey: ["profile"],
-    enabled: !!accessToken,
     queryFn: async () => {
-      // This will use the axiosSecure instance with interceptors
-      const res = await axiosSecure.get("/auth/me/");
-      return res.data;
+      try {
+        return await authApi.getProfile();
+      } catch {
+        return null;
+      }
     },
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
-    retry: 1
+    retry: false,
   });
 
-  const avatar = profile?.profile_image
-    ? `https://your-api-domain.com${profile.profile_image}`
-    : "/default-avatar.png";
-  */
+  const login = useCallback(
+    (userData: AuthUser) => {
+      queryClient.setQueryData(["profile"], userData);
+    },
+    [queryClient]
+  );
 
-  // login logic
-  const login = (data: any) => {
-    /*
-    const userData = data.user;
-    const tokens = data.tokens;
-
-    // Use Cookies for the token (better for SSR/Next.js)
-    Cookies.set("accessToken", tokens.access, { expires: 7 }); 
-    localStorage.setItem("user", JSON.stringify(userData));
-
-    setUser(userData);
-    */
-    console.log("Mock Login triggered. Data:", data);
-    setUser(data?.user || { name: "Mock User", email: data?.email });
-  };
-
-  // logout logic
-  const logout = () => {
-    /*
-    Cookies.remove("accessToken");
-    localStorage.removeItem("user");
-    setUser(null);
-    */
-    console.log("Mock Logout triggered");
-    setUser(null);
-  };
-
-  useEffect(() => {
-    // Initial check for existing session on page load
-    const savedUser = localStorage.getItem("user");
-    if (savedUser) {
-      try {
-        setUser(JSON.parse(savedUser));
-      } catch (e) {
-        console.error("Failed to parse saved user", e);
-      }
+  const logout = useCallback(async () => {
+    try {
+      await authApi.logout();
+    } catch {
+      // silently fail — still clear client state
+    } finally {
+      queryClient.clear();
+      window.location.href = "/auth/login";
     }
-    setLoading(false);
-  }, []);
+  }, [queryClient]);
 
-  const authInfo = {
-    user,
+  const refetchUser = useCallback(async (): Promise<AuthUser | null> => {
+    const res = await refetch();
+    return res.data ?? null;
+  }, [refetch]);
+
+  const updateUser = useCallback(
+    (userData: AuthUser) => {
+      queryClient.setQueryData(["profile"], userData);
+    },
+    [queryClient]
+  );
+
+  // Listen for 401 events dispatched by the axios interceptor
+  useEffect(() => {
+    const handleUnauthorized = () => {
+      queryClient.clear();
+      window.location.href = "/auth/login";
+    };
+    window.addEventListener("auth:unauthorized", handleUnauthorized);
+    return () => window.removeEventListener("auth:unauthorized", handleUnauthorized);
+  }, [queryClient]);
+
+  const value: AuthContextType = {
+    user: user ?? null,
+    loading: isLoading,
+    isAuthenticated: !!user,
     login,
     logout,
-    loading: loading, // Change to: loading || isLoading when backend ready
-    // profile,
-    // avatar
+    refetchUser,
+    updateUser,
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>
-      {loading && <Loader variant="splash" message="Loading Dashboard..." />}
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
+// ── Hook ──────────────────────────────────────────────────────────────────────
+
+export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
+  if (!context) throw new Error("useAuth must be used within an AuthProvider");
   return context;
 };

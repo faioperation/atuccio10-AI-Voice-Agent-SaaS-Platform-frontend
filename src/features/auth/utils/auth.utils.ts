@@ -1,4 +1,4 @@
-import { REDIRECT_INTENT_KEY, PENDING_EMAIL_KEY } from "../constants/auth.constants";
+import { REDIRECT_INTENT_KEY, PENDING_EMAIL_KEY, PENDING_RESET_EMAIL_KEY } from "../constants/auth.constants";
 
 // ── Redirect intent ───────────────────────────────────────────────────────────
 // Persists the URL the user was on before entering the auth flow so they can
@@ -35,6 +35,24 @@ export function getPendingVerificationEmail(): string | null {
 export function clearPendingVerificationEmail(): void {
   if (typeof window === "undefined") return;
   sessionStorage.removeItem(PENDING_EMAIL_KEY);
+}
+
+// ── Pending reset email ───────────────────────────────────────────────────────
+// Persists the email address across the forgot-password → set-password pages.
+
+export function setPendingResetEmail(email: string): void {
+  if (typeof window === "undefined") return;
+  sessionStorage.setItem(PENDING_RESET_EMAIL_KEY, email);
+}
+
+export function getPendingResetEmail(): string | null {
+  if (typeof window === "undefined") return null;
+  return sessionStorage.getItem(PENDING_RESET_EMAIL_KEY);
+}
+
+export function clearPendingResetEmail(): void {
+  if (typeof window === "undefined") return;
+  sessionStorage.removeItem(PENDING_RESET_EMAIL_KEY);
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────

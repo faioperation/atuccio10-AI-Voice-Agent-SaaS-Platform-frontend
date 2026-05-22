@@ -1,7 +1,6 @@
 "use client";
 
 import {
-    ResponsiveContainer,
     BarChart,
     Bar,
     XAxis,
@@ -9,63 +8,68 @@ import {
     Tooltip,
     Cell,
 } from "recharts";
+import type { ChartDataPoint } from "@/features/dashboard/api/dashboard.types";
 
-const callLogsData = [
-    { name: "Mon", value: 155 },
-    { name: "Tue", value: 265 },
-    { name: "Wed", value: 205 },
-    { name: "Thu", value: 215 },
-    { name: "Fri", value: 305 },
-    { name: "Sat", value: 115 },
-    { name: "Sun", value: 210 },
+interface CallLogsChartProps {
+  data?: ChartDataPoint[];
+}
+
+const FALLBACK: ChartDataPoint[] = [
+  { name: "Mon", value: 0 },
+  { name: "Tue", value: 0 },
+  { name: "Wed", value: 0 },
+  { name: "Thu", value: 0 },
+  { name: "Fri", value: 0 },
+  { name: "Sat", value: 0 },
+  { name: "Sun", value: 0 },
 ];
 
-export default function CallLogsChart() {
-    return (
-        <div className="h-[230px] min-w-0 w-full">
-            {/* <ResponsiveContainer width="100%" height="100%"> */}
-            <BarChart
-                width={700}
-                height={230}
-                data={callLogsData}
-                margin={{ top: 5, right: 5, left: -25, bottom: 0 }}
-                style={{ outline: "none" }}
-            >
-                <XAxis
-                    dataKey="name"
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: "#94A3B8", fontSize: 10, fontWeight: 500 }}
-                    dy={8}
-                />
+export default function CallLogsChart({ data }: CallLogsChartProps) {
+  const chartData = data && data.length > 0 ? data : FALLBACK;
 
-                <YAxis
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: "#94A3B8", fontSize: 10, fontWeight: 500 }}
-                    tickCount={4}
-                />
+  // Highlight the bar with the highest value
+  const maxValue = Math.max(...chartData.map((d) => d.value));
 
-                <Tooltip
-                    cursor={{ fill: "rgba(241,245,249,0.6)" }}
-                    contentStyle={{
-                        borderRadius: "10px",
-                        border: "none",
-                        boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
-                        fontSize: "12px",
-                    }}
-                />
-
-                <Bar dataKey="value" radius={[5, 5, 0, 0]} barSize={28}>
-                    {callLogsData.map((_, index) => (
-                        <Cell
-                            key={`cell-${index}`}
-                            fill={index === 4 ? "#3B82F6" : "#BFDBFE"}
-                        />
-                    ))}
-                </Bar>
-            </BarChart>
-            {/* </ResponsiveContainer> */}
-        </div>
-    );
+  return (
+    <div className="h-[230px] min-w-0 w-full">
+      <BarChart
+        width={700}
+        height={230}
+        data={chartData}
+        margin={{ top: 5, right: 5, left: -25, bottom: 0 }}
+        style={{ outline: "none" }}
+      >
+        <XAxis
+          dataKey="name"
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: "#94A3B8", fontSize: 10, fontWeight: 500 }}
+          dy={8}
+        />
+        <YAxis
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: "#94A3B8", fontSize: 10, fontWeight: 500 }}
+          tickCount={4}
+        />
+        <Tooltip
+          cursor={{ fill: "rgba(241,245,249,0.6)" }}
+          contentStyle={{
+            borderRadius: "10px",
+            border: "none",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
+            fontSize: "12px",
+          }}
+        />
+        <Bar dataKey="value" radius={[5, 5, 0, 0]} barSize={28}>
+          {chartData.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={entry.value === maxValue && maxValue > 0 ? "#3B82F6" : "#BFDBFE"}
+            />
+          ))}
+        </Bar>
+      </BarChart>
+    </div>
+  );
 }

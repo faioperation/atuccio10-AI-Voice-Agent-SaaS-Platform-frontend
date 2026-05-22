@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import SystemSidebar from "@/components/system_admin_components/common/SystemSidebar";
 import SystemHeader from "@/components/system_admin_components/common/SystemHeader";
+import RoleGuard from "@/features/auth/components/RoleGuard";
 
 interface SystemLayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ export default function SystemLayout({ children }: SystemLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
+    <RoleGuard allowedRoles={["system_admin"]}>
     <div className="flex min-h-screen bg-[#F5F7FA]">
 
       {/* ── Desktop Sidebar (sticky) ── */}
@@ -54,5 +56,6 @@ export default function SystemLayout({ children }: SystemLayoutProps) {
 
       </div>
     </div>
+    </RoleGuard>
   );
 }

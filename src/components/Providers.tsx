@@ -3,6 +3,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { Toaster } from "react-hot-toast";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -22,6 +23,7 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         {children}
+        <Toaster position="top-right" reverseOrder={false} />
       </AuthProvider>
     </QueryClientProvider>
   );

@@ -58,12 +58,7 @@ export default function Header({ setSidebarOpen }: HeaderProps) {
       {/* Right: Switch + Bell + Avatar */}
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Temporary Switch Link */}
-        <Link 
-          href="/system_admin" 
-          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl border border-[#EDEFF2] text-[12px] font-bold text-[#1A6BDC] hover:bg-[#F3F7FF] transition-all shadow-sm hover:cursor-pointer"
-        >
-          Switch to System
-        </Link>
+      
 
         {/* Notification Bell with Dropdown Modal */}
         <div className="relative" ref={notifRef}>

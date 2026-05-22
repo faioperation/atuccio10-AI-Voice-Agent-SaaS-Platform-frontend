@@ -1,35 +1,27 @@
-import axios, { AxiosInstance } from "axios";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
+import { apiAxios } from "@/lib/api/axios";
+import type { AxiosInstance } from "axios";
 
-// Create an axios instance
-export const axiosSecure: AxiosInstance = axios.create({
-  baseURL: "", // Set your backend base URL here when ready
-});
-
+/**
+ * Returns the shared apiAxios instance (withCredentials: true, 401 → auth:unauthorized event).
+ * Attaches an Authorization header from the `accessToken` cookie on each request when present
+ * (supports backends that accept both cookie-based and header-based JWT).
+ */
 const useAxiosSecure = (): AxiosInstance => {
   useEffect(() => {
-    // Add a request interceptor to attach the access token
-    const interceptor = axiosSecure.interceptors.request.use(
-      (config) => {
-        const token = Cookies.get("accessToken");
-        if (token && config.headers) {
-          config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-      },
-      (error) => {
-        return Promise.reject(error);
+    const id = apiAxios.interceptors.request.use((config) => {
+      const token = Cookies.get("accessToken");
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`;
       }
-    );
-
-    // Eject interceptor on cleanup to prevent multiple interceptors
-    return () => {
-      axiosSecure.interceptors.request.eject(interceptor);
-    };
+      return config;
+    });
+    return () => apiAxios.interceptors.request.eject(id);
   }, []);
 
-  return axiosSecure;
+  return apiAxios;
 };
 
+export { apiAxios as axiosSecure };
 export default useAxiosSecure;

@@ -14,9 +14,10 @@ import {
   maskEmail,
   extractApiFieldErrors,
 } from "@/features/auth/utils/auth.utils";
+import { getPendingPlanPriceId } from "@/features/billing/utils/billing.utils";
 import { ApiError } from "@/lib/api/client";
-import { OTP_RESEND_COOLDOWN_SECONDS } from "@/features/auth/constants/auth.constants";
 import AuthAlert from "@/features/auth/components/AuthAlert";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface OtpInputs {
   otp: string[];
@@ -25,9 +26,10 @@ interface OtpInputs {
 export default function OtpPage() {
   const router = useRouter();
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const { refetchUser } = useAuth();
 
   const [email, setEmail] = useState<string | null>(null);
-  const [cooldown, setCooldown] = useState(OTP_RESEND_COOLDOWN_SECONDS);
+  const [cooldown, setCooldown] = useState(0);
   const [notice, setNotice] = useState<{ type: "success" | "error"; message: string } | null>(
     null
   );
@@ -39,7 +41,50 @@ export default function OtpPage() {
     defaultValues: { otp: ["", "", "", "", "", ""] },
   });
 
-  // Load email from sessionStorage — redirect to signup if missing
+  // Calculate cooldown duration based on the resend count.
+  // count=1 (initial) → 30s, count=2 (1st resend) → 60s, count=3 → 120s, count=4 → 240s, ...
+  const getCooldownDuration = (count: number): number => {
+    return 30 * Math.pow(2, count - 1);
+  };
+
+  const handleAutoResend = async (targetEmail: string) => {
+    setNotice(null);
+    try {
+      await resendOtpMutation.mutateAsync({ email: targetEmail, type: "email_verify" });
+      
+      // Since this is the initial auto-send, set resend count to 1 and cooldown to 30s
+      sessionStorage.setItem("otp_resend_count", "1");
+      const initialCooldown = getCooldownDuration(1); // 30s
+      const expires = Date.now() + initialCooldown * 1000;
+      sessionStorage.setItem("otp_cooldown_expires_at", String(expires));
+
+      setNotice({ type: "success", message: "Verification code sent to your email." });
+      setCooldown(initialCooldown);
+      reset({ otp: ["", "", "", "", "", ""] });
+    } catch (error) {
+      if (error instanceof ApiError) {
+        const raw = error.data as Record<string, unknown> | null;
+        if (raw?.code === "rate_limit_exceeded" && typeof raw.wait_time === "number") {
+          const serverWaitTime = raw.wait_time;
+          const expires = Date.now() + serverWaitTime * 1000;
+          sessionStorage.setItem("otp_cooldown_expires_at", String(expires));
+          setCooldown(serverWaitTime);
+          setNotice({
+            type: "error",
+            message: `Please wait ${serverWaitTime}s before requesting another code.`,
+          });
+        } else {
+          const fieldErrors = extractApiFieldErrors(raw);
+          const msg = fieldErrors.error || fieldErrors.detail || "Failed to send code. Try again.";
+          setNotice({ type: "error", message: msg });
+        }
+      } else {
+        setNotice({ type: "error", message: "Something went wrong sending verification code." });
+      }
+    }
+  };
+
+  // Load email and initialize/restore cooldown from sessionStorage
   useEffect(() => {
     const pending = getPendingVerificationEmail();
     if (!pending) {
@@ -47,11 +92,34 @@ export default function OtpPage() {
       return;
     }
     setEmail(pending);
-    // Focus first input on mount
     inputRefs.current[0]?.focus();
+
+    // Check if there is an active cooldown saved in sessionStorage
+    const expiresAt = sessionStorage.getItem("otp_cooldown_expires_at");
+    if (expiresAt) {
+      const remaining = Math.max(0, Math.ceil((Number(expiresAt) - Date.now()) / 1000));
+      if (remaining > 0) {
+        setCooldown(remaining);
+        return;
+      }
+    }
+
+    // Check if we need to trigger the initial OTP resend immediately on land
+    const triggerNeeded = sessionStorage.getItem("otp_trigger_needed");
+    if (triggerNeeded === "true") {
+      sessionStorage.removeItem("otp_trigger_needed");
+      handleAutoResend(pending);
+    } else {
+      // Otherwise set the default 30s cooldown
+      const initialCooldown = getCooldownDuration(1); // 30s
+      const expires = Date.now() + initialCooldown * 1000;
+      sessionStorage.setItem("otp_cooldown_expires_at", String(expires));
+      sessionStorage.setItem("otp_resend_count", "1");
+      setCooldown(initialCooldown);
+    }
   }, [router]);
 
-  // Countdown timer
+  // Countdown timer effect
   useEffect(() => {
     if (cooldown <= 0) return;
     const id = setInterval(() => {
@@ -82,11 +150,22 @@ export default function OtpPage() {
     try {
       await verifyEmailMutation.mutateAsync({ email, otp: otpString });
 
+      // Automatically log the user in on successful verification by refetching profile
+      await refetchUser();
+
       clearPendingVerificationEmail();
+      sessionStorage.removeItem("otp_cooldown_expires_at");
+      sessionStorage.removeItem("otp_resend_count");
+
+      // Pending billing plan takes priority — go straight to checkout handoff
+      if (getPendingPlanPriceId()) {
+        router.push("/auth/checkout");
+        return;
+      }
+
       const intent = getRedirectIntent();
       clearRedirectIntent();
 
-      // Redirect to original page, or home — never back to auth
       router.push(intent && !intent.startsWith("/auth") ? intent : "/");
     } catch (error) {
       if (error instanceof ApiError) {
@@ -112,18 +191,31 @@ export default function OtpPage() {
 
     try {
       await resendOtpMutation.mutateAsync({ email, type: "email_verify" });
+      
+      // Update resend count and compute new cooldown
+      const savedCount = sessionStorage.getItem("otp_resend_count");
+      const currentCount = savedCount ? Number(savedCount) + 1 : 1;
+      sessionStorage.setItem("otp_resend_count", String(currentCount));
+
+      const nextCooldown = getCooldownDuration(currentCount);
+      const expires = Date.now() + nextCooldown * 1000;
+      sessionStorage.setItem("otp_cooldown_expires_at", String(expires));
+
       setNotice({ type: "success", message: "A new verification code has been sent." });
-      setCooldown(OTP_RESEND_COOLDOWN_SECONDS);
+      setCooldown(nextCooldown);
       reset({ otp: ["", "", "", "", "", ""] });
       inputRefs.current[0]?.focus();
     } catch (error) {
       if (error instanceof ApiError) {
         const raw = error.data as Record<string, unknown> | null;
         if (raw?.code === "rate_limit_exceeded" && typeof raw.wait_time === "number") {
-          setCooldown(raw.wait_time);
+          const serverWaitTime = raw.wait_time;
+          const expires = Date.now() + serverWaitTime * 1000;
+          sessionStorage.setItem("otp_cooldown_expires_at", String(expires));
+          setCooldown(serverWaitTime);
           setNotice({
             type: "error",
-            message: `Please wait ${raw.wait_time}s before requesting another code.`,
+            message: `Please wait ${serverWaitTime}s before requesting another code.`,
           });
         } else {
           const fieldErrors = extractApiFieldErrors(raw);
@@ -185,17 +277,25 @@ export default function OtpPage() {
               />
             </div>
             <h1 className="text-[28px] font-bold text-[#0C1824] leading-tight mt-2">
-              OTP Verification
+              Check Your Email
             </h1>
           </div>
           <p className="text-[14px] text-[#64748B] mt-1 text-center px-4 leading-relaxed">
-            Enter the 6-digit code sent to
+            We sent a 6-digit verification code to
           </p>
           <p className="text-[14px] font-semibold text-[#0C1824] mt-0.5">{maskEmail(email)}</p>
         </div>
 
         {/* Notice banner */}
         {notice && <AuthAlert type={notice.type} message={notice.message} className="mb-6" />}
+
+        {/* Info box */}
+        <div className="bg-[#FAFBFC] border border-[#EDEFF2] rounded-lg px-4 py-3 mb-6">
+          <p className="text-[13px] text-[#64748B] leading-relaxed">
+            Didn&apos;t receive the email? Check your spam folder, or use the resend button below.
+            The code expires in <span className="font-semibold text-[#0C1824]">5 minutes</span>.
+          </p>
+        </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
@@ -264,13 +364,18 @@ export default function OtpPage() {
           )}
         </div>
 
-        {/* Back link */}
+        {/* Back / Change Email option */}
         <div className="text-center mt-4">
           <button
-            onClick={() => router.push("/auth/verify-email")}
+            onClick={() => {
+              clearPendingVerificationEmail();
+              sessionStorage.removeItem("otp_cooldown_expires_at");
+              sessionStorage.removeItem("otp_resend_count");
+              router.push("/auth/signup");
+            }}
             className="text-[13px] text-[#94A3B8] hover:text-[#64748B] transition-colors"
           >
-            ← Back to email confirmation
+            ← Change email / Back to Sign up
           </button>
         </div>
       </div>
